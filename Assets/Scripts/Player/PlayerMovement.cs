@@ -29,9 +29,13 @@ public class PlayerMovement : MonoBehaviour
     Vector2 currentDirVelocity;
     Vector3 velocity;
 
+
+    [SerializeField] private GameObject footstep;
+
     // Start is called before the first frame update
     void Start()
     {
+
         controller = GetComponent<CharacterController>();
         if (cursorLock)
         {
@@ -81,6 +85,18 @@ public class PlayerMovement : MonoBehaviour
         {
             velocityY = -8f;
         }
+
+        //Footstep audio players when player walks -- 
+        if (currentDir.magnitude > 0.1f)
+        {
+            footstep.SetActive(true);
+        }
+        else
+        {
+            footstep.SetActive(false);
+        }
+
+        Debug.Log(currentDir.magnitude);
 
     }
 
