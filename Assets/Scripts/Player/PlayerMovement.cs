@@ -96,7 +96,6 @@ public class PlayerMovement : MonoBehaviour
             footstep.SetActive(false);
         }
 
-        Debug.Log(currentDir.magnitude);
 
     }
 
