@@ -13,17 +13,21 @@ public class HeadBobScript : MonoBehaviour
     [Range(10f, 100f)]
     public float Smooth = 10.0f;
 
+    Vector3 startPos;
+
     // Start is called before the first frame update
     void Start()
     {
         playerMovement = GameObject.Find("Player").GetComponent<PlayerMovement>();
+
+        startPos = transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
     {
         CheckForHeadBobTrigger();
-        
+        StopHeadBob();
     }
 
     private void CheckForHeadBobTrigger()
@@ -42,5 +46,11 @@ public class HeadBobScript : MonoBehaviour
         transform.localPosition += pos;
 
         return pos;
+    }
+
+    private void StopHeadBob()
+    {
+        if (transform.localPosition == startPos) return;
+        transform.localPosition = Vector3.Lerp(transform.localPosition, startPos, 1 * Time.deltaTime);
     }
 }
