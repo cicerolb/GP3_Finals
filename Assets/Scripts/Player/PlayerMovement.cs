@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     Vector2 currentDirVelocity;
     Vector3 velocity;
 
+    public bool isMoving;
+
 
     [SerializeField] private GameObject footstep;
 
@@ -86,14 +88,16 @@ public class PlayerMovement : MonoBehaviour
             velocityY = -8f;
         }
 
-        //Footstep audio players when player walks -- 
+        //Footstep audio plays when player walks -- 
         if (currentDir.magnitude > 0.1f)
         {
             footstep.SetActive(true);
+            isMoving = true;
         }
         else
         {
             footstep.SetActive(false);
+            isMoving = false;
         }
 
 
