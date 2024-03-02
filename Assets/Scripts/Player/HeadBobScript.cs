@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeadBobScript : MonoBehaviour
 {
-    PlayerMovement playerMovement;
+    [SerializeField] private PlayerMovement playerMovement;
 
     [Range(0.001f, 0.01f)]
     public float Amount = 0.002f;
