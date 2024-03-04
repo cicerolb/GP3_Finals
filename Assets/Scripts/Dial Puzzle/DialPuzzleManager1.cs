@@ -82,7 +82,7 @@ public class DialPuzzleManager1 : MonoBehaviour
         {
             PuzzleComplete();
             ChangeColor();
-            playerMovement.cursorLock = false;
+            
 
 
             if (Input.GetKeyDown(KeyCode.Alpha3))
