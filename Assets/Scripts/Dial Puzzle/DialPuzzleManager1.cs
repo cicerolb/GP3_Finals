@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using Cinemachine;
 
 public class DialPuzzleManager1 : MonoBehaviour
 {
-
-
+    public AudioSource audioSource;
+    PlayerMovement playerMovement;
+    [SerializeField] private GameObject player;
     [SerializeField] private Vector3[] dial;
     [SerializeField] private GameObject[] dialMaterials;
     [SerializeField] private Transform arrow;
     [SerializeField] private TextMeshProUGUI debug;
     int i = 0;
     int x = 0;
-    int dialInput = 1;
     private int rotationsRemaining = 0;
 
     bool dial0, dial1, dial2, dial3, dial4, dial5, dial6;
@@ -22,21 +23,54 @@ public class DialPuzzleManager1 : MonoBehaviour
     public float cooldownTime = 5;
     public int desiredOutput;
     bool materialChanged = true;
+    bool puzzleStart = false;
+
+
+    float dist;
+    CinemachineVirtualCamera playerCamera;
+    CinemachineVirtualCamera dialPuzzleCamera;
 
     // Start is called before the first frame update
     void Start()
     {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        audioSource = GetComponent<AudioSource>();
+        playerCamera = GameObject.Find("PlayerCamera").GetComponent<CinemachineVirtualCamera>();
+        dialPuzzleCamera = GameObject.Find("DialPuzzleCamera").GetComponent<CinemachineVirtualCamera>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        PuzzleComplete();
+        StartDialPuzzle();
+
+        if (puzzleStart)
+        {
+            playerMovement.canMove = false;
+            playerMovement.cursorLock = false;
+
+            dialPuzzleCamera.Priority = 11;
+
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                puzzleStart = false;
+                playerMovement.canMove = true;
+                playerMovement.cursorLock = true;
+            }
+        }
+
+        if (!puzzleStart)
+        {
+            dialPuzzleCamera.Priority = 9;
+        }
+       
+
+
 
         cooldownTime = Mathf.Clamp(cooldownTime - Time.deltaTime, 0f, Mathf.Infinity);
 
-        ChangeColor();
+        
 
         if (cooldownTime == 0)
         {
@@ -44,42 +78,43 @@ public class DialPuzzleManager1 : MonoBehaviour
 
         }
 
-
-        if (Input.GetKeyDown(KeyCode.Alpha3))
+        if (puzzleStart)
         {
-            if (cooldownTime == 0)
+            PuzzleComplete();
+            ChangeColor();
+            playerMovement.cursorLock = false;
+
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
             {
-                rotationsRemaining = 3;
-                materialChanged = false;
-                desiredOutput += 3;
-            }
-            
+                if (cooldownTime == 0)
+                {
+                    rotationsRemaining = 3;
+                    materialChanged = false;
+                    desiredOutput += 3;
+                }
 
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            if (cooldownTime == 0)
+
+            }
+            else if (Input.GetKeyDown(KeyCode.Alpha4))
             {
-                rotationsRemaining = 4;
-                materialChanged = false;
-                desiredOutput += 4;
+                if (cooldownTime == 0)
+                {
+                    rotationsRemaining = 4;
+                    materialChanged = false;
+                    desiredOutput += 4;
+                }
+
             }
-           
+
+            if (desiredOutput >= 7)
+            {
+                desiredOutput -= 7;
+            }
         }
-
-        if (desiredOutput >= 7)
-        {
-            desiredOutput -= 7;
-        }
+        
 
 
-
-
-
-
-
-
-        debug.SetText("dial0: "+ dial0+ "dial1: " + dial1 + " dial2: " + dial2 + "dial3: " + dial3 + "dial4: " +dial4+ "dial5: "+dial5+"dial6: "+dial6) ;
     }
 
     void RotateArrow()
@@ -93,9 +128,10 @@ public class DialPuzzleManager1 : MonoBehaviour
                 x = (i + 1) % dialMaterials.Length;
                 i = (i + 1) % dial.Length;
                 arrow.eulerAngles = dial[i];
-
+                
                 rotationsRemaining--;
                 cooldownTime += 0.5f;
+                audioSource.Play();
 
 
 
@@ -133,6 +169,19 @@ public class DialPuzzleManager1 : MonoBehaviour
         }
 
         
+    }
+
+    void StartDialPuzzle()
+    {
+        dist = Vector3.Distance(player.transform.position , transform.position);
+
+        if (dist < 3.5)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                puzzleStart = true;
+            }
+        }
     }
 
 }

@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Transform playerCamera;
     [SerializeField]
     [Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
-    [SerializeField] bool cursorLock = true;
+    [SerializeField] public bool cursorLock = true;
     [SerializeField] float mouseSensitivity = 3.5f;
     [SerializeField] float speed = 6.0f;
     [SerializeField]
@@ -31,13 +31,15 @@ public class PlayerMovement : MonoBehaviour
 
     public bool isMoving;
 
+    public bool canMove = true;
+
 
     [SerializeField] private GameObject footstep;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        canMove = true;
         controller = GetComponent<CharacterController>();
         if (cursorLock)
         {
@@ -49,8 +51,24 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateMouse();
-        UpdateMove();
+        if (canMove)
+        {
+            UpdateMouse();
+            UpdateMove();
+        }
+
+        if (canMove == false)
+        {
+            footstep.SetActive(false);
+            isMoving = false;
+            cursorLock = false;
+        }
+        else
+        {
+            footstep.SetActive(true);
+            
+        }
+
     }
 
     void UpdateMouse()
@@ -93,12 +111,16 @@ public class PlayerMovement : MonoBehaviour
         {
             footstep.SetActive(true);
             isMoving = true;
+
+
         }
         else
         {
             footstep.SetActive(false);
             isMoving = false;
         }
+
+        
 
 
     }
