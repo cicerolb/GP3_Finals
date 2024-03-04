@@ -69,6 +69,16 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = 60;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = 6;
+        }
+
     }
 
     void UpdateMouse()
