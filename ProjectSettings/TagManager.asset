@@ -3,22 +3,17 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-<<<<<<< HEAD
-  - Exit
-=======
-  - Ground
->>>>>>> 15f518d91fee1bd2a739ce81c04a1da9116bee8d
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Player
+  - 
   - Water
   - UI
-  - Hitbox
-  - whatIsGround
-  - Obstruction
+  - 
+  - 
+  - 
   - 
   - 
   - 
