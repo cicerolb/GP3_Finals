@@ -17,6 +17,7 @@ public class LoopManager : MonoBehaviour
     {
         puzzleComplete = false;
         player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
 
