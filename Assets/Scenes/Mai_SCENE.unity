@@ -2193,6 +2193,7 @@ GameObject:
   - component: {fileID: 1004540434}
   - component: {fileID: 1004540435}
   - component: {fileID: 1004540436}
+  - component: {fileID: 1004540437}
   m_Layer: 0
   m_Name: flashlight
   m_TagString: Untagged
@@ -2211,7 +2212,7 @@ Transform:
   m_LocalRotation: {x: 0.029750805, y: -0.00000026822087, z: 0.08749682, w: 0.99572045}
   m_LocalPosition: {x: 0.18100011, y: -0.16699994, z: 0.37799987}
   m_LocalScale: {x: 0.053537186, y: 0.0535372, z: 0.05353719}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1488005930}
   m_LocalEulerAnglesHint: {x: 3.397, y: 0.299, z: 10.053}
@@ -2256,7 +2257,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1882256628, guid: 473466ef2bac352448b421fa05f18d26, type: 3}
+  m_Sprite: {fileID: 876247752, guid: 473466ef2bac352448b421fa05f18d26, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2275,7 +2276,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1004540433}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 97dd87a30623b43419770d8c3f705940, type: 2}
   m_CullingMode: 2
@@ -2288,6 +2289,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1004540437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1004540433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c413f36ce0d171946ad9b1e8fa57aea7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1023696875
 GameObject:
   m_ObjectHideFlags: 0
