@@ -122,8 +122,6 @@ public class DialPuzzleManager1 : MonoBehaviour
                 desiredOutput -= 7;
             }
         }
-        
-
 
     }
 
@@ -191,6 +189,8 @@ public class DialPuzzleManager1 : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 puzzleStart = true;
+
+                Debug.Log("asdasda");
             }
         }
     }

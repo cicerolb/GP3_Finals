@@ -6,17 +6,27 @@ TagManager:
   tags:
   - Exit
   - Game Manager
+<<<<<<< Updated upstream
   - Ground
   - Player Camera
   - Spawn
+=======
+<<<<<<< HEAD
+  - Drag
+=======
+  - Ground
+  - Player Camera
+  - Spawn
+>>>>>>> 45af03cbb026660e6c7f6be3572b862010929b74
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
-  - 
+  - Obstacle
   - 
   - 
   - 

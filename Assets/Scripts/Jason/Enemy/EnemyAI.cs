@@ -126,6 +126,10 @@ public class EnemyAI : MonoBehaviour
                     Stop();
                     m_WaitTime -= Time.deltaTime;
                 }
+                {
+                    // Call the new method when the player is within a certain distance
+                    MoveToLastKnownPlayerLocation();
+                }
             }
         }
     }
@@ -205,4 +209,14 @@ public class EnemyAI : MonoBehaviour
             }
         }
     }
+    void MoveToLastKnownPlayerLocation()
+    {
+        if (playerLastPosition != Vector3.zero)
+        {
+            m_IsPatrol = false;
+            m_PlayerNear = true;
+            navMeshAgent.SetDestination(playerLastPosition);
+        }
+    }
+
 }
