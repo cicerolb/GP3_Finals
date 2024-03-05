@@ -5,15 +5,21 @@ using UnityEngine;
 public class PlayerSpawnManager : MonoBehaviour
 {
     [SerializeField] private GameObject player;
-    [SerializeField] private Transform spawn;
+    [SerializeField] private GameObject spawn;
+
+    private void Awake()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        spawn = GameObject.FindGameObjectWithTag("Spawn");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
 
         player.SetActive(false);
-        player.transform.position = spawn.position;
-        player.transform.rotation = spawn.rotation;
+        player.transform.position = spawn.transform.position;
+        player.transform.rotation = spawn.transform.rotation;
         player.SetActive(true);
     }
 

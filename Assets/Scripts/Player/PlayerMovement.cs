@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] Transform playerCamera;
+    [SerializeField] GameObject playerCamera;
     [SerializeField]
     [Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
     [SerializeField] public bool cursorLock = true;
@@ -41,16 +41,26 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = true;
         controller = GetComponent<CharacterController>();
-        if (cursorLock)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = true;
-        }
+        
+
+        playerCamera = GameObject.FindGameObjectWithTag("Player Camera");
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (cursorLock)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+        }
+
+
         if (canMove)
         {
             UpdateMouse();
@@ -87,7 +97,7 @@ public class PlayerMovement : MonoBehaviour
         currentMouseDelta = Vector2.SmoothDamp(currentMouseDelta, targetMouseDelta, ref currentMouseDeltaVelocity, mouseSmoothTime);
         cameraCap -= currentMouseDelta.y * mouseSensitivity;
         cameraCap = Mathf.Clamp(cameraCap, -90.0f, 90.0f);
-        playerCamera.localEulerAngles = Vector3.right * cameraCap;
+        playerCamera.transform.localEulerAngles = Vector3.right * cameraCap;
         transform.Rotate(Vector3.up * currentMouseDelta.x * mouseSensitivity);
     }
 

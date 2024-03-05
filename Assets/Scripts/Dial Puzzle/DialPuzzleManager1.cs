@@ -42,7 +42,7 @@ public class DialPuzzleManager1 : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         audioSource = GetComponent<AudioSource>();
-        playerCamera = GameObject.Find("PlayerCamera").GetComponent<CinemachineVirtualCamera>();
+        playerCamera = GameObject.FindGameObjectWithTag("Player Camera").GetComponent<CinemachineVirtualCamera>();
         dialPuzzleCamera = GameObject.Find("DialPuzzleCamera").GetComponent<CinemachineVirtualCamera>();
 
     }
@@ -56,8 +56,7 @@ public class DialPuzzleManager1 : MonoBehaviour
         if (puzzleStart)
         {
             playerMovement.canMove = false;
-
-            Cursor.lockState = CursorLockMode.Confined;
+            playerMovement.cursorLock = false;
 
             dialPuzzleCamera.Priority = 11;
 
@@ -72,8 +71,8 @@ public class DialPuzzleManager1 : MonoBehaviour
         if (!puzzleStart)
         {
             dialPuzzleCamera.Priority = 9;
-            Cursor.lockState = CursorLockMode.Locked;
             playerMovement.canMove = true;
+            playerMovement.cursorLock = true;
         }
        
 
