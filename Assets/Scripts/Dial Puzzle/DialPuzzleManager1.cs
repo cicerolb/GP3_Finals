@@ -10,6 +10,7 @@ public class DialPuzzleManager1 : MonoBehaviour
 {
     public AudioSource audioSource;
     PlayerMovement playerMovement;
+    [SerializeField] LoopManager loopManager;
     [SerializeField] private GameObject player;
     [SerializeField] private Vector3[] dial;
     [SerializeField] private GameObject[] dialMaterials;
@@ -34,8 +35,11 @@ public class DialPuzzleManager1 : MonoBehaviour
     public GameObject dialChoices;
 
     // Start is called before the first frame update
+
     void Start()
     {
+        loopManager = GameObject.FindGameObjectWithTag("Exit").GetComponent<LoopManager>();
+        player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         audioSource = GetComponent<AudioSource>();
         playerCamera = GameObject.Find("PlayerCamera").GetComponent<CinemachineVirtualCamera>();
@@ -69,6 +73,7 @@ public class DialPuzzleManager1 : MonoBehaviour
         {
             dialPuzzleCamera.Priority = 9;
             Cursor.lockState = CursorLockMode.Locked;
+            playerMovement.canMove = true;
         }
        
 
@@ -171,7 +176,7 @@ public class DialPuzzleManager1 : MonoBehaviour
             if (dial0 == true && dial1 == false && dial2 == true && dial3 == true && dial4 == false && dial5 == false && dial6 == false)
             {
                 Debug.Log("PUZZLE COMPLETE");
-                SceneManager.LoadScene("PrologueTest_SCENE");
+                loopManager.puzzleComplete = true;
             }
         }
 
