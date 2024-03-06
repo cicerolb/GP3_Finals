@@ -190,7 +190,6 @@ public class DialPuzzleManager1 : MonoBehaviour
             {
                 puzzleStart = true;
 
-                Debug.Log("asdasda");
             }
         }
     }
