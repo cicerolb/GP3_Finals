@@ -209,6 +209,8 @@ public class DialPuzzleManager1 : MonoBehaviour
 
     public void Button3Pressed()
     {
+        Debug.Log("dsad");
+
         if (cooldownTime == 0)
         {
             rotationsRemaining = 3;
