@@ -8,6 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class DialPuzzleManager1 : MonoBehaviour
 {
+
+    HandsAnimation handsAnimation;
     public AudioSource audioSource;
     PlayerMovement playerMovement;
     [SerializeField] LoopManager loopManager;
@@ -28,16 +30,21 @@ public class DialPuzzleManager1 : MonoBehaviour
     bool puzzleStart = false;
 
 
+
     float dist;
     CinemachineVirtualCamera playerCamera;
     CinemachineVirtualCamera dialPuzzleCamera;
 
     public GameObject dialChoices;
+    public GameObject pelvisItem;
+    public SpriteRenderer flashlight;
 
     // Start is called before the first frame update
 
     void Start()
     {
+        flashlight = GameObject.Find("flashlight").GetComponent<SpriteRenderer>();
+        handsAnimation = GameObject.Find("flashlight").GetComponent<HandsAnimation>();
         loopManager = GameObject.FindGameObjectWithTag("Exit").GetComponent<LoopManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
@@ -60,6 +67,9 @@ public class DialPuzzleManager1 : MonoBehaviour
 
             dialPuzzleCamera.Priority = 11;
 
+            flashlight.enabled = false;
+            handsAnimation.isFlashlightOn = false;
+
             if (Input.GetKeyDown(KeyCode.F))
             {
                 puzzleStart = false;
@@ -73,6 +83,9 @@ public class DialPuzzleManager1 : MonoBehaviour
             dialPuzzleCamera.Priority = 9;
             playerMovement.canMove = true;
             playerMovement.cursorLock = true;
+
+            flashlight.enabled = true;
+            
         }
        
 
@@ -174,6 +187,8 @@ public class DialPuzzleManager1 : MonoBehaviour
             {
                 Debug.Log("PUZZLE COMPLETE");
                 loopManager.puzzleComplete = true;
+                pelvisItem.SetActive(true);
+                puzzleStart = false;
             }
         }
 

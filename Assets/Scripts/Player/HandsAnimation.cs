@@ -5,7 +5,7 @@ using UnityEngine;
 public class HandsAnimation : MonoBehaviour
 {
     private Animator animator;
-    [SerializeField] private bool isFlashlightOn = false;
+    [SerializeField] public bool isFlashlightOn = false;
 
     void Start()
     {
