@@ -23,7 +23,7 @@ RenderSettings:
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
-  m_AmbientIntensity: 1
+  m_AmbientIntensity: 0.36
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 2100000, guid: 69f806d16a045c74ab7c0292262214eb, type: 2}
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.038652185, g: 0.03845451, b: 0.038396988, a: 1}
+  m_IndirectSpecularColor: {r: 0.2445768, g: 0.24332078, b: 0.24295616, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -631,8 +631,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 97288196}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.065, y: 1.07, z: 6.878}
+  m_LocalRotation: {x: 0.072250105, y: -0, z: -0, w: 0.9973866}
+  m_LocalPosition: {x: -13.2, y: 1.1612229, z: -6.246128}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -640,7 +640,7 @@ Transform:
   - {fileID: 404058168}
   - {fileID: 905111639}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 8.286, y: 0, z: 0}
 --- !u!1 &132027528
 GameObject:
   m_ObjectHideFlags: 0
@@ -2949,7 +2949,7 @@ Camera:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: 03c1e35f8a18a894a80e65ad45f47162, type: 2}
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 1
@@ -3001,8 +3001,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 716553747}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.065, y: 1.594, z: 6.878}
+  m_LocalRotation: {x: 0.072250105, y: 0, z: 0, w: 0.9973866}
+  m_LocalPosition: {x: -13.2, y: 1.6797522, z: -6.170608}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6941,7 +6941,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1861624235
 Transform:
   m_ObjectHideFlags: 0
@@ -6950,13 +6950,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861624234}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.5302787, y: 0.5270057, z: 0.4714499, w: 0.46776545}
-  m_LocalPosition: {x: -0, y: 0.072, z: 0.006}
+  m_LocalRotation: {x: -0.5190696, y: 0.4999401, z: 0.5003359, w: 0.47988623}
+  m_LocalPosition: {x: -0.149, y: 0.569, z: -0.013}
   m_LocalScale: {x: 2.682661, y: 0.5, z: 0.47377777}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2068901723}
-  m_LocalEulerAnglesHint: {x: -0.399, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -93.175, y: 45.617004, z: 44.459}
 --- !u!114 &1861624236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6992,10 +6992,10 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 14.48
-  m_Range: 8
-  m_SpotAngle: 30.059326
-  m_InnerSpotAngle: 18.444046
+  m_Intensity: 343.77
+  m_Range: 375.96542
+  m_SpotAngle: 63.643375
+  m_InnerSpotAngle: 16.02985
   m_CookieSize: 10
   m_Shadows:
     m_Type: 0
@@ -7036,7 +7036,7 @@ Light:
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
-  m_UseColorTemperature: 0
+  m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -7394,7 +7394,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.09
+  m_Intensity: 0
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -7789,7 +7789,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2087921519
@@ -7799,7 +7799,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2087921517}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
   m_Name: 
