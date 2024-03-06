@@ -6,22 +6,39 @@ public class lightsOnLightsOff : MonoBehaviour
 {
     [SerializeField] private GameObject light;
     [SerializeField] private bool lightOn;
+    [SerializeField] HandsAnimation handAnimation;
 
+    private void Awake()
+    {
+        handAnimation = GameObject.Find("flashlight").GetComponent<HandsAnimation>();
+    }
     public void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+
+        if (!handAnimation.isFlashlightOn)
         {
-            if (!lightOn) 
-            {
-                light.SetActive(false);
-            }
-
-            else
-            {
-                light.SetActive(true);
-            }
-
-            lightOn = !lightOn;
+            lightOn = false;
         }
+
+        else
+        {
+            lightOn = true;
+        }
+
+        //lightOn = !lightOn;
+
+
+        if (lightOn)
+        {
+            light.SetActive(true);
+
+        }
+        else
+        {
+            light.SetActive(false);
+
+        }
+
+
     }
 }

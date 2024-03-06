@@ -4,21 +4,59 @@ using UnityEngine;
 
 public class HandsAnimation : MonoBehaviour
 {
-    private Animator animator;
+    public Animator animator;
     [SerializeField] public bool isFlashlightOn = false;
+    [SerializeField] public bool flashlightAnimation = false;
+    [SerializeField] private DialPuzzleManager1 dialPuzzleManager;
+    [SerializeField] private bool puzzleStart;
+
 
     void Start()
     {
+        dialPuzzleManager = GameObject.FindGameObjectWithTag("Dial Puzzle").GetComponent<DialPuzzleManager1>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        animator.SetBool("IsFlashlightOn", flashlightAnimation);
+        if (dialPuzzleManager.dialPuzzleStart)
         {
-            isFlashlightOn = !isFlashlightOn;
-
-            animator.SetBool("IsFlashlightOn", isFlashlightOn);
+            puzzleStart = true;
         }
+        else
+        {
+            puzzleStart = false;
+        }
+
+
+        if (!puzzleStart)
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (flashlightAnimation)
+                {
+                    flashlightAnimation = !flashlightAnimation;
+                    //animator.SetBool("IsFlashlightOn", flashlightAnimation);
+                    StartCoroutine(ToggleFlashlight(0));
+                }
+                else
+                {
+                    flashlightAnimation = !flashlightAnimation;
+                    //animator.SetBool("IsFlashlightOn", flashlightAnimation);
+                    StartCoroutine(ToggleFlashlight(0.7f));
+                }
+                
+            }
+        }
+
+        
+
+    }
+
+    IEnumerator ToggleFlashlight(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        isFlashlightOn = !isFlashlightOn;
     }
 }

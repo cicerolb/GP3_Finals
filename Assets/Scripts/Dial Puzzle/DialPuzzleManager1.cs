@@ -8,11 +8,17 @@ using UnityEngine.SceneManagement;
 
 public class DialPuzzleManager1 : MonoBehaviour
 {
-
-    HandsAnimation handsAnimation;
-    public AudioSource audioSource;
-    PlayerMovement playerMovement;
+    // Scripts ---
     [SerializeField] LoopManager loopManager;
+    [SerializeField] PlayerMovement playerMovement;
+    [SerializeField]HandsAnimation handsAnimation;
+
+
+
+
+    public AudioSource audioSource;
+    
+   
     [SerializeField] private GameObject player;
     [SerializeField] private Vector3[] dial;
     [SerializeField] private GameObject[] dialMaterials;
@@ -27,7 +33,7 @@ public class DialPuzzleManager1 : MonoBehaviour
     public float cooldownTime = 5;
     public int desiredOutput;
     bool materialChanged = true;
-    bool puzzleStart = false;
+    public bool dialPuzzleStart = false;
 
 
 
@@ -43,7 +49,7 @@ public class DialPuzzleManager1 : MonoBehaviour
 
     void Start()
     {
-        flashlight = GameObject.Find("flashlight").GetComponent<SpriteRenderer>();
+        flashlight = GameObject.Find("flashlight").GetComponent<SpriteRenderer>(); 
         handsAnimation = GameObject.Find("flashlight").GetComponent<HandsAnimation>();
         loopManager = GameObject.FindGameObjectWithTag("Exit").GetComponent<LoopManager>();
         player = GameObject.FindGameObjectWithTag("Player");
@@ -60,7 +66,7 @@ public class DialPuzzleManager1 : MonoBehaviour
         StartDialPuzzle();
         DialOptions();
 
-        if (puzzleStart)
+        if (dialPuzzleStart)
         {
             playerMovement.canMove = false;
             playerMovement.cursorLock = false;
@@ -68,17 +74,18 @@ public class DialPuzzleManager1 : MonoBehaviour
             dialPuzzleCamera.Priority = 11;
 
             flashlight.enabled = false;
+            handsAnimation.flashlightAnimation = false;
             handsAnimation.isFlashlightOn = false;
 
             if (Input.GetKeyDown(KeyCode.F))
             {
-                puzzleStart = false;
+                dialPuzzleStart = false;
             }
 
 
         }
 
-        if (!puzzleStart)
+        if (!dialPuzzleStart)
         {
             dialPuzzleCamera.Priority = 9;
             playerMovement.canMove = true;
@@ -101,7 +108,7 @@ public class DialPuzzleManager1 : MonoBehaviour
 
         }
 
-        if (puzzleStart)
+        if (dialPuzzleStart)
         {
             PuzzleComplete();
             ChangeColor();
@@ -188,7 +195,7 @@ public class DialPuzzleManager1 : MonoBehaviour
                 Debug.Log("PUZZLE COMPLETE");
                 loopManager.puzzleComplete = true;
                 pelvisItem.SetActive(true);
-                puzzleStart = false;
+                dialPuzzleStart = false;
             }
         }
 
@@ -201,17 +208,21 @@ public class DialPuzzleManager1 : MonoBehaviour
 
         if (dist < 3.5)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (!loopManager.puzzleComplete)
             {
-                puzzleStart = true;
+                 if (Input.GetKeyDown(KeyCode.E))
+            {
+                dialPuzzleStart = true;
 
             }
+            }
+           
         }
     }
 
     void DialOptions()
     {
-        if (puzzleStart)
+        if (dialPuzzleStart)
         {
             dialChoices.SetActive(true);
             

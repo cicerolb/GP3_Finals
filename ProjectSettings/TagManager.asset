@@ -9,6 +9,8 @@ TagManager:
   - Exit
   - Spawn
   - Dial Choices
+  - Drag
+  - Dial Puzzle
   layers:
   - Default
   - TransparentFX
