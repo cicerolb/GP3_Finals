@@ -2284,6 +2284,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2297726467331523939, guid: 088fe869a68343e43aa4d79d4f7644e7,
+        type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2698102246310055293, guid: 088fe869a68343e43aa4d79d4f7644e7,
         type: 3}
       propertyPath: m_Name
