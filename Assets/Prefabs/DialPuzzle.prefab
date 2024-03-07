@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3471503775722731269}
   m_Layer: 0
   m_Name: DialPuzzle
-  m_TagString: Untagged
+  m_TagString: Puzzle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -49,6 +49,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbc21f0c8ae578741962b790ad13ce8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  loopManager: {fileID: 0}
+  playerMovement: {fileID: 0}
+  handsAnimation: {fileID: 0}
   audioSource: {fileID: 0}
   player: {fileID: 0}
   dial:
@@ -71,6 +74,10 @@ MonoBehaviour:
   debug: {fileID: 0}
   cooldownTime: 1
   desiredOutput: 0
+  dialPuzzleStart: 0
+  dialChoices: {fileID: 0}
+  pelvisItem: {fileID: 0}
+  flashlight: {fileID: 0}
 --- !u!82 &3471503775722731269
 AudioSource:
   m_ObjectHideFlags: 0

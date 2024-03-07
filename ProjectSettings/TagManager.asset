@@ -11,6 +11,7 @@ TagManager:
   - Dial Choices
   - Drag
   - Dial Puzzle
+  - Puzzle
   layers:
   - Default
   - TransparentFX
