@@ -74,10 +74,7 @@ public class DialPuzzleManager1 : MonoBehaviour
             dialPuzzleCamera.Priority = 11;
 
 
-            if (Input.GetKeyDown(KeyCode.F))
-            {
-                dialPuzzleStart = false;
-            }
+
 
             if (flashlight != null)
             {
@@ -223,13 +220,11 @@ public class DialPuzzleManager1 : MonoBehaviour
         {
             if (!loopManager.puzzleComplete)
             {
-                 if (Input.GetKeyDown(KeyCode.E))
-            {
-                dialPuzzleStart = true;
-
-            }
-            }
-           
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    dialPuzzleStart = true;
+                }
+            } 
         }
     }
 
@@ -267,6 +262,10 @@ public class DialPuzzleManager1 : MonoBehaviour
             desiredOutput += 4;
         }
     }
-            
+          
+    public void ExitPressed()
+    {
+        dialPuzzleStart = false;
+    }
 
 }

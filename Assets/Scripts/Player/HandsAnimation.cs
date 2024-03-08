@@ -64,7 +64,7 @@ public class HandsAnimation : MonoBehaviour
 
         if (!puzzleStart)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 if (flashlightAnimation)
                 {
@@ -88,7 +88,12 @@ public class HandsAnimation : MonoBehaviour
 
     IEnumerator ToggleFlashlight(float seconds)
     {
-        yield return new WaitForSeconds(seconds);
-        isFlashlightOn = !isFlashlightOn;
+        if (!puzzleStart)
+        {
+            yield return new WaitForSeconds(seconds);
+            isFlashlightOn = !isFlashlightOn;
+        }
+        
+
     }
 }
