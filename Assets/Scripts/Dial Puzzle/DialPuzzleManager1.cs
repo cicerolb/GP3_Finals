@@ -73,15 +73,24 @@ public class DialPuzzleManager1 : MonoBehaviour
 
             dialPuzzleCamera.Priority = 11;
 
-            flashlight.enabled = false;
-            handsAnimation.flashlightAnimation = false;
-            handsAnimation.isFlashlightOn = false;
 
             if (Input.GetKeyDown(KeyCode.F))
             {
                 dialPuzzleStart = false;
             }
 
+            if (flashlight != null)
+            {
+                flashlight.enabled = false;
+
+            }
+
+            if (handsAnimation != null)
+            {
+                handsAnimation.flashlightAnimation = false;
+                handsAnimation.isFlashlightOn = false;
+            }
+      
 
         }
 
@@ -91,8 +100,12 @@ public class DialPuzzleManager1 : MonoBehaviour
             playerMovement.canMove = true;
             playerMovement.cursorLock = true;
 
-            flashlight.enabled = true;
-            
+            if (flashlight != null)
+            {
+                flashlight.enabled = true;
+
+            }
+
         }
        
 

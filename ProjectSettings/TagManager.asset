@@ -12,6 +12,7 @@ TagManager:
   - Drag
   - Dial Puzzle
   - Puzzle
+  - Game Manager
   layers:
   - Default
   - TransparentFX

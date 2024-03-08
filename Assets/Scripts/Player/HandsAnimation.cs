@@ -11,20 +11,22 @@ public class HandsAnimation : MonoBehaviour
     [SerializeField] private ProloguePuzzleManager prologuePuzzleManager;
     [SerializeField] private bool puzzleStart;
     [SerializeField] private GameObject currentPuzzle;
+    [SerializeField] private PuzzleChecker puzzleChecker;
 
 
     void Start()
     {
+        puzzleChecker = GameObject.FindGameObjectWithTag("Game Manager").GetComponent<PuzzleChecker>();
         animator = GetComponent<Animator>();
 
         currentPuzzle = GameObject.FindGameObjectWithTag("Puzzle");
 
-        if (currentPuzzle.name == "DialPuzzle")
+        if (puzzleChecker.dialPuzzle)
         {
             dialPuzzleManager = GameObject.FindGameObjectWithTag("Puzzle").GetComponent<DialPuzzleManager1>();
 
         }
-        else if (currentPuzzle.name == "ProloguePuzzle")
+        else if (puzzleChecker.prologuePuzzle)
         {
             prologuePuzzleManager = GameObject.FindGameObjectWithTag("Puzzle").GetComponent<ProloguePuzzleManager>();
         }
