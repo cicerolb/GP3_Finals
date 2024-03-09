@@ -8,31 +8,63 @@ public class HandsAnimation : MonoBehaviour
     [SerializeField] public bool isFlashlightOn = false;
     [SerializeField] public bool flashlightAnimation = false;
     [SerializeField] private DialPuzzleManager1 dialPuzzleManager;
+    [SerializeField] private ProloguePuzzleManager prologuePuzzleManager;
     [SerializeField] private bool puzzleStart;
+    [SerializeField] private GameObject currentPuzzle;
+    [SerializeField] private PuzzleChecker puzzleChecker;
 
 
     void Start()
     {
-        dialPuzzleManager = GameObject.FindGameObjectWithTag("Dial Puzzle").GetComponent<DialPuzzleManager1>();
+        puzzleChecker = GameObject.FindGameObjectWithTag("Game Manager").GetComponent<PuzzleChecker>();
         animator = GetComponent<Animator>();
+
+        currentPuzzle = GameObject.FindGameObjectWithTag("Puzzle");
+
+        if (puzzleChecker.dialPuzzle)
+        {
+            dialPuzzleManager = GameObject.FindGameObjectWithTag("Puzzle").GetComponent<DialPuzzleManager1>();
+
+        }
+        else if (puzzleChecker.prologuePuzzle)
+        {
+            prologuePuzzleManager = GameObject.FindGameObjectWithTag("Puzzle").GetComponent<ProloguePuzzleManager>();
+        }
     }
 
     void Update()
     {
         animator.SetBool("IsFlashlightOn", flashlightAnimation);
-        if (dialPuzzleManager.dialPuzzleStart)
+        if (dialPuzzleManager != null)
         {
-            puzzleStart = true;
+            if (dialPuzzleManager.dialPuzzleStart)
+            {
+                puzzleStart = true;
+            }
+            else
+            {
+                puzzleStart = false;
+            }
         }
-        else
+        else if (prologuePuzzleManager != null)
         {
-            puzzleStart = false;
+            if (prologuePuzzleManager.prologuePuzzleStart)
+            {
+                puzzleStart = true;
+            }
+            else
+            {
+                puzzleStart = false;
+            }
         }
+
+
+
 
 
         if (!puzzleStart)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetKeyDown(KeyCode.F))
             {
                 if (flashlightAnimation)
                 {
@@ -56,7 +88,12 @@ public class HandsAnimation : MonoBehaviour
 
     IEnumerator ToggleFlashlight(float seconds)
     {
-        yield return new WaitForSeconds(seconds);
-        isFlashlightOn = !isFlashlightOn;
+        if (!puzzleStart)
+        {
+            yield return new WaitForSeconds(seconds);
+            isFlashlightOn = !isFlashlightOn;
+        }
+        
+
     }
 }

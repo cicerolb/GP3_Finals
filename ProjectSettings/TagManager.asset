@@ -11,6 +11,8 @@ TagManager:
   - Dial Choices
   - Drag
   - Dial Puzzle
+  - Puzzle
+  - Game Manager
   layers:
   - Default
   - TransparentFX
@@ -18,8 +20,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Obstacle
   - 
   - 
   - 
