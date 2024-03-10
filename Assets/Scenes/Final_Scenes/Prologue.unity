@@ -18192,7 +18192,7 @@ GameObject:
   - component: {fileID: 1981396325}
   - component: {fileID: 1981396324}
   m_Layer: 5
-  m_Name: DialogueBox
+  m_Name: Dialogue 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18232,9 +18232,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1287709357}
   lines:
-  - hello
-  - there
-  textSpeed: 0.3
+  - Classes are finally over
+  - Its time to go home
+  - I should meet my friends otw to carousel
+  textSpeed: 0.01
 --- !u!114 &1981396325
 MonoBehaviour:
   m_ObjectHideFlags: 0
