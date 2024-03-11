@@ -9,11 +9,13 @@ public class PlayerRayCast : MonoBehaviour
     [SerializeField] private float pickUpDistance;
     private RaycastHit raycastHit;
     [SerializeField] private GameObject indicator;
+    [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] private GameObject itemScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventoryManager = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryManager>();
     }
 
     // Update is called once per frame
@@ -21,8 +23,21 @@ public class PlayerRayCast : MonoBehaviour
     {
         if (Physics.Raycast(cameraPosition.position, cameraPosition.forward, out raycastHit, pickUpDistance, pickUpLayerMask))
         {
-            Debug.Log("hdjkashd");
             indicator.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+
+                itemScreen.SetActive(true);
+
+
+                //indicator.SetActive(false);
+                //if (raycastHit.collider.gameObject.layer == LayerMask.NameToLayer("Umbrella"))
+                //{
+                //    inventoryManager.umbrella = true;
+                //    Debug.Log("ashjnkdjkhasd");
+                //}
+               
+            }
         }
         else if (!Physics.Raycast(cameraPosition.position, cameraPosition.forward, out raycastHit, pickUpDistance, pickUpLayerMask))
 
