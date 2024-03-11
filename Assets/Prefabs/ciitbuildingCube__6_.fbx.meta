@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 341f30f2c6b52dc47ad915208a0fb386
+guid: 51de2312849e12742a5beeba8b6b7ea7
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: ciit_mat
-    second: {fileID: 2100000, guid: 6e020f2c01fa588479bd582707e48e93, type: 2}
+      name: Lit
+    second: {fileID: 2100000, guid: 7a2a4312031cb744b9c5a3ba45b21587, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
