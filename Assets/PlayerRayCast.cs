@@ -24,7 +24,8 @@ public class PlayerRayCast : MonoBehaviour
             Debug.Log("hdjkashd");
             indicator.SetActive(true);
         }
-        else
+        else if (!Physics.Raycast(cameraPosition.position, cameraPosition.forward, out raycastHit, pickUpDistance, pickUpLayerMask))
+
         {
             indicator.SetActive(false);
         }
