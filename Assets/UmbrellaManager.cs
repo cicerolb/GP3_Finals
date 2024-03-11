@@ -7,6 +7,7 @@ public class UmbrellaManager : MonoBehaviour
 {
     InventoryManager inventoryManager;
     [SerializeField] Object scene;
+    [SerializeField] MeshRenderer umbrella;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,14 @@ public class UmbrellaManager : MonoBehaviour
     {
         if (inventoryManager.umbrella == true)
         {
-            SceneManager.LoadScene(scene.name);
+            umbrella.enabled = false;
+            StartCoroutine(ChangeScene());
         }
+    }
+    
+    IEnumerator ChangeScene()
+    {
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(scene.name);
     }
 }

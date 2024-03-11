@@ -69,11 +69,6 @@ public class PlayerMovement : MonoBehaviour
             UpdateMove();
         }
 
-        if (canLook)
-        {
-            UpdateMouse();
-        }
-
         if (canMove == false)
         {
             footstep.SetActive(false);
