@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
     [SerializeField] public bool cursorLock = true;
     [SerializeField] float mouseSensitivity = 3.5f;
-    [SerializeField] float speed = 6.0f;
+    [SerializeField] public float speed = 6.0f;
     [SerializeField]
     [Range(0.0f, 0.5f)] float moveSmoothTime = 0.0f;
     [SerializeField] float gravity = -30f;
@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     public bool isMoving;
 
     public bool canMove = true;
+    public bool canLook = true;
 
 
     [SerializeField] private GameObject footstep;
@@ -65,6 +66,11 @@ public class PlayerMovement : MonoBehaviour
         {
             UpdateMouse();
             UpdateMove();
+        }
+
+        if (canLook)
+        {
+            UpdateMouse();
         }
 
         if (canMove == false)

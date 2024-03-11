@@ -5,14 +5,22 @@ using UnityEngine;
 
 public class DialogueScript : MonoBehaviour
 {
+    [SerializeField] PlayerMovement playerMovement;
     public TextMeshProUGUI textComponent;
     public string[] lines;
     public float textSpeed;
 
     private int index;
+
+    private void Awake()
+    {
+        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
+
     // Start is called before the first frame update
     void Start()
     {
+        playerMovement.speed = 0f;
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -59,7 +67,9 @@ public class DialogueScript : MonoBehaviour
         }
         else
         {
+            playerMovement.speed = 6f;
             gameObject.SetActive(false);
+
         }
     }
 

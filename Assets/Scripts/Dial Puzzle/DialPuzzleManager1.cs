@@ -14,8 +14,6 @@ public class DialPuzzleManager1 : MonoBehaviour
     [SerializeField]HandsAnimation handsAnimation;
 
 
-
-
     public AudioSource audioSource;
     
    
@@ -69,6 +67,7 @@ public class DialPuzzleManager1 : MonoBehaviour
         if (dialPuzzleStart)
         {
             playerMovement.canMove = false;
+            playerMovement.canLook = false;
             playerMovement.cursorLock = false;
 
             dialPuzzleCamera.Priority = 11;
@@ -95,6 +94,7 @@ public class DialPuzzleManager1 : MonoBehaviour
         {
             dialPuzzleCamera.Priority = 9;
             playerMovement.canMove = true;
+            playerMovement.canLook = true;
             playerMovement.cursorLock = true;
 
             if (flashlight != null)
