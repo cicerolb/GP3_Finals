@@ -21,6 +21,7 @@ public class DialogueScript : MonoBehaviour
     void Start()
     {
         playerMovement.speed = 0f;
+        playerMovement.canSprint = false;
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -67,6 +68,7 @@ public class DialogueScript : MonoBehaviour
         }
         else
         {
+            playerMovement.canSprint = true;
             playerMovement.speed = 6f;
             gameObject.SetActive(false);
 

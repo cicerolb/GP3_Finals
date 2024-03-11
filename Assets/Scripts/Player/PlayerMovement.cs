@@ -33,6 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     public bool canMove = true;
     public bool canLook = true;
+    public bool canSprint = true;
 
 
     [SerializeField] private GameObject footstep;
@@ -85,15 +86,18 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (canSprint)
         {
-            speed = 60;
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                speed = 60;
+            }
+            else if (Input.GetKeyUp(KeyCode.LeftShift))
+            {
+                speed = 6;
+            }
         }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            speed = 6;
-        }
+        
 
     }
 
