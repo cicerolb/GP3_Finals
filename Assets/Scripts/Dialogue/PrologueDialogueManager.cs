@@ -4,24 +4,28 @@ using UnityEngine;
 
 public class DialogueManager : MonoBehaviour
 {
+    // Dialogues
     [SerializeField] private GameObject dialogue1;
     [SerializeField] private GameObject dialogue2;
     [SerializeField] private GameObject dialogue3;
-    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private GameObject dialogue4;
+    // ---
+
+    // Other Scripts
+    [SerializeField] private UmbrellaManager umbrellaManager;
+
+
     [SerializeField] private GameObject proc_dialogue2;
     [SerializeField] private bool proc_dialogue3;
     [SerializeField] private GameObject friends;
     [SerializeField] private float dist;
     [SerializeField] private GameObject player;
     [SerializeField] private bool hasRun = false;
+    [SerializeField] private GameObject umbrellaTable;
     // Start is called before the first frame update
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
-    }
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         Dialogue1();
     }
 
@@ -29,6 +33,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         Dialogue2Proc();
+        Dialogue3Proc();
     }
 
     void Dialogue2Proc()
@@ -41,11 +46,24 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogue2.SetActive(true);
                 hasRun = true;
+                umbrellaTable.SetActive(true);
+
             }
-            
-            
+
+
         }
         
+    }
+    public void Dialogue3Proc()
+    {
+        umbrellaManager = GameObject.Find("Umbrella").GetComponent<UmbrellaManager>();
+
+        if (umbrellaManager.changeScene == true)
+        {
+            dialogue3.SetActive(true);
+            umbrellaManager.changeScene = false;
+        }
+
     }
 
     void Dialogue1()
