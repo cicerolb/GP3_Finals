@@ -8,11 +8,11 @@ public class Countdown : MonoBehaviour
     public float startNumber = 100f;       
     public float countSeconds = 10f;      
 
-    private float timeMultiplier = 50f;    
+    [SerializeField] private float timeMultiplier;    
 
     void Start()
     {
-        timeMultiplier = startNumber / countSeconds;  
+        //timeMultiplier = startNumber / countSeconds;  
         StartCoroutine(CountdownRoutine());
     }
 
