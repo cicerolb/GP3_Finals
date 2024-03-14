@@ -11,8 +11,16 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject dialogue4;
     // ---
 
+    // Objectives
+    [SerializeField] private GameObject objective1;
+    [SerializeField] private GameObject objective2;
+
+
+
+
     // Other Scripts
     [SerializeField] private UmbrellaManager umbrellaManager;
+    [SerializeField] private ObjectiveSkip objectiveSkip;
 
 
     [SerializeField] private GameObject proc_dialogue2;
@@ -22,11 +30,15 @@ public class DialogueManager : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private bool hasRun = false;
     [SerializeField] private GameObject umbrellaTable;
+
+    public bool nextObjective = false;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        objectiveSkip = GameObject.Find("ObjectiveSkip").GetComponent<ObjectiveSkip>();
         Dialogue1();
+
     }
 
     // Update is called once per frame
@@ -44,6 +56,8 @@ public class DialogueManager : MonoBehaviour
         {
             if (dist < 7)
             {
+                objectiveSkip.nextObjective = true;
+                objective2.SetActive(true);
                 dialogue2.SetActive(true);
                 hasRun = true;
                 umbrellaTable.SetActive(true);
@@ -68,6 +82,7 @@ public class DialogueManager : MonoBehaviour
 
     void Dialogue1()
     {
+        objective1.SetActive(true);
         dialogue1.SetActive(true);
     }
 }
