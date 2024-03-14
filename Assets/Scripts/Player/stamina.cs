@@ -23,7 +23,7 @@ public class Stamina : MonoBehaviour
         {
             DecreaseEnergy();
         }
-        else if (playerStamina != maxStamina)
+        else if (playerStamina > 0 && playerStamina < maxStamina)
         {
             IncreaseEnergy();
         }
@@ -32,6 +32,11 @@ public class Stamina : MonoBehaviour
 
         Debug.Log("Player Stamina: " + playerStamina);
         Debug.Log("Slider Value: " + staminaBar.value);
+
+        if (playerStamina <= 0)
+        {
+            StartCoroutine(StaminaDelay());
+        }
     }
 
     private void DecreaseEnergy()
@@ -45,5 +50,11 @@ public class Stamina : MonoBehaviour
     private void IncreaseEnergy()
     {
         playerStamina += 1;
+    }
+
+    IEnumerator StaminaDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        IncreaseEnergy();
     }
 }
