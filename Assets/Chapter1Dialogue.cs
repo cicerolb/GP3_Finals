@@ -11,8 +11,12 @@ public class Chapter1Dialogue : MonoBehaviour
     [SerializeField] private GameObject dialogue4;
     // ---
 
+    // Objectives
+    [SerializeField] private GameObject objective1;
+    [SerializeField] private GameObject objective2;
+
     // Other Scripts
-    [SerializeField] private UmbrellaManager umbrellaManager;
+    [SerializeField] private ObjectiveSkip objectiveSkip;
 
     [SerializeField] private GameObject friends;
     [SerializeField] private float dist;
@@ -22,6 +26,7 @@ public class Chapter1Dialogue : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        objectiveSkip = GameObject.Find("ObjectiveSkip").GetComponent<ObjectiveSkip>();
         Dialogue1();
     }
 
@@ -40,8 +45,10 @@ public class Chapter1Dialogue : MonoBehaviour
         {
             if (dist < 7)
             {
+                objectiveSkip.nextObjective = true;
                 dialogue2.SetActive(true);
                 hasRun = true;
+                objective2.SetActive(true);
 
             }
 
@@ -51,18 +58,12 @@ public class Chapter1Dialogue : MonoBehaviour
     }
     public void Dialogue3Proc()
     {
-        umbrellaManager = GameObject.Find("Umbrella").GetComponent<UmbrellaManager>();
-
-        if (umbrellaManager.changeScene == true)
-        {
-            dialogue3.SetActive(true);
-            umbrellaManager.changeScene = false;
-        }
 
     }
 
     void Dialogue1()
     {
+        objective1.SetActive(true);
         dialogue1.SetActive(true);
     }
 }
