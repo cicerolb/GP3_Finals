@@ -3331,7 +3331,7 @@ MonoBehaviour:
   teleportPosition: {fileID: 934616320}
   player: {fileID: 0}
   puzzleComplete: 0
-  scene: {fileID: 102900000, guid: 9604b7ca579ccb343be621841337b7a7, type: 3}
+  scene: {fileID: 102900000, guid: 2aabde76b28e4e8489c0b28c21719eaf, type: 3}
 --- !u!65 &272791288
 BoxCollider:
   m_ObjectHideFlags: 0

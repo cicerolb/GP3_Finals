@@ -17,7 +17,7 @@ public class Chapter1Dialogue : MonoBehaviour
 
     // Other Scripts
     [SerializeField] private ObjectiveSkip objectiveSkip;
-    [SerializeField] private SchoolExitCollider schoolExitCollider;
+    [SerializeField] private AreaCollider schoolExitCollider;
 
     [SerializeField] private GameObject friends;
     [SerializeField] private GameObject bowl;
@@ -49,7 +49,7 @@ public class Chapter1Dialogue : MonoBehaviour
 
     void Dialogue2Proc()
     {
-        schoolExitCollider = GameObject.Find("SchoolExit").GetComponent<SchoolExitCollider>();
+        schoolExitCollider = GameObject.Find("SchoolExit").GetComponent<AreaCollider>();
         if (!hasRun1)
         {
             if (schoolExitCollider.dialogueStart)
