@@ -17,11 +17,20 @@ public class Chapter1Dialogue : MonoBehaviour
 
     // Other Scripts
     [SerializeField] private ObjectiveSkip objectiveSkip;
+    [SerializeField] private SchoolExitCollider schoolExitCollider;
 
     [SerializeField] private GameObject friends;
-    [SerializeField] private float dist;
+    [SerializeField] private GameObject bowl;
+
+    [SerializeField] private float friendDist;
+    [SerializeField] private float bowlDist;
     [SerializeField] private GameObject player;
-    [SerializeField] private bool hasRun = false;
+
+
+    // Limiters
+    [SerializeField] private bool hasRun1 = false;
+    [SerializeField] private bool hasRun2 = false;
+    [SerializeField] private bool hasRun3 = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,19 +44,35 @@ public class Chapter1Dialogue : MonoBehaviour
     {
         Dialogue2Proc();
         Dialogue3Proc();
+        Dialogue4Proc();
     }
 
     void Dialogue2Proc()
     {
-
-        dist = Vector3.Distance(player.transform.position, friends.transform.position);
-        if (!hasRun)
+        schoolExitCollider = GameObject.Find("SchoolExit").GetComponent<SchoolExitCollider>();
+        if (!hasRun1)
         {
-            if (dist < 7)
+            if (schoolExitCollider.dialogueStart)
+            {
+                dialogue2.SetActive(true);
+                hasRun1 = true;
+            }
+        }
+      
+
+    }
+
+    void Dialogue3Proc()
+    {
+
+        friendDist = Vector3.Distance(player.transform.position, friends.transform.position);
+        if (!hasRun2)
+        {
+            if (friendDist < 7)
             {
                 objectiveSkip.nextObjective = true;
-                dialogue2.SetActive(true);
-                hasRun = true;
+                dialogue3.SetActive(true);
+                hasRun2 = true;
                 objective2.SetActive(true);
 
             }
@@ -56,9 +81,18 @@ public class Chapter1Dialogue : MonoBehaviour
         }
 
     }
-    public void Dialogue3Proc()
+    public void Dialogue4Proc()
     {
+        bowlDist = Vector3.Distance(player.transform.position, bowl.transform.position);
 
+        if (!hasRun3)
+        {
+            if (bowlDist < 7)
+            {
+                dialogue4.SetActive(true);
+                hasRun3 = true;
+            }
+        }
     }
 
     void Dialogue1()
