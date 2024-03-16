@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.24157338, g: 0.24030477, b: 0.23992932, a: 1}
+  m_IndirectSpecularColor: {r: 0.07425325, g: 0.073853016, b: 0.0737402, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6967,6 +6967,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialogue 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3267140917582209569, guid: f96fe1e2ed33de7429347007ffe62536,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dialogue
+      objectReference: {fileID: 0}
     - target: {fileID: 4246363324736234092, guid: f96fe1e2ed33de7429347007ffe62536,
         type: 3}
       propertyPath: lines.Array.size
@@ -8946,6 +8951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4648963766731989748, guid: bdb449462e0afaf41928f9173e5617e0,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 5617092395149422108, guid: bdb449462e0afaf41928f9173e5617e0,
         type: 3}
@@ -13416,8 +13426,8 @@ RectTransform:
   - {fileID: 1403448497}
   - {fileID: 2032872448}
   - {fileID: 1750909406}
-  - {fileID: 893597682}
   - {fileID: 323657729}
+  - {fileID: 893597682}
   - {fileID: 672727417}
   - {fileID: 233944317}
   - {fileID: 2015602603}
@@ -13798,6 +13808,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210887945694187884, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 8549184099740910392, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
@@ -52764,6 +52779,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Dialogue 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4210887945694187884, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dialogue
       objectReference: {fileID: 0}
     - target: {fileID: 8549184099740910392, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}

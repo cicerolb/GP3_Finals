@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField] private GameObject footstep;
+    [SerializeField] private GameObject dialogue;
 
     // Start is called before the first frame update
     void Start()
@@ -134,8 +135,23 @@ public class PlayerMovement : MonoBehaviour
         //Footstep audio plays when player walks -- 
         if (currentDir.magnitude > 0.1f)
         {
-            footstep.SetActive(true);
-            isMoving = true;
+            dialogue = GameObject.FindGameObjectWithTag("Dialogue");
+
+
+
+            if (dialogue == null)
+            {
+                footstep.SetActive(true);
+                isMoving = true;
+                canSprint = true;
+            }
+            else
+            {
+                footstep.SetActive(false);
+                isMoving = false;
+                canSprint = false;
+            }
+
 
 
         }
