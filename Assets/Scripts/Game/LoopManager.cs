@@ -34,17 +34,18 @@ public class LoopManager : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-            if (!puzzleComplete)
-            {
-                player.SetActive(false);
-                player.transform.position = teleportPosition.transform.position;
-                player.transform.rotation = teleportPosition.transform.rotation;
-                player.SetActive(true);
-            }
-            else
-            {
-                SceneManager.LoadScene(scene.name);
-            }
+             SceneManager.LoadScene(scene.name);
+            //if (!puzzleComplete)
+            //{
+            //    player.SetActive(false);
+            //    player.transform.position = teleportPosition.transform.position;
+            //    player.transform.rotation = teleportPosition.transform.rotation;
+            //    player.SetActive(true);
+            //}
+            
+            
+               
+            
             
         }
         
