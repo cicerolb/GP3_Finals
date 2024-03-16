@@ -20,6 +20,7 @@ public class Chapter2Dialogue : MonoBehaviour
     // Other Scripts
     [SerializeField] private ObjectiveSkip objectiveSkip;
     [SerializeField] private AreaCollider restaurantCollider, schoolExitCollider;
+    [SerializeField] private AudioManager audioManager;
 
     // Limiters
     [SerializeField] private bool hasRun1 = false;
@@ -29,6 +30,7 @@ public class Chapter2Dialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioManager = GameObject.Find("SceneAudioManager").GetComponent<AudioManager>();
         player = GameObject.FindGameObjectWithTag("Player");
         objectiveSkip = GameObject.Find("ObjectiveSkip").GetComponent<ObjectiveSkip>();
         Dialogue1();
@@ -56,6 +58,7 @@ public class Chapter2Dialogue : MonoBehaviour
         {
             if (schoolExitCollider.dialogueStart)
             {
+                audioManager.enemyFootSteps = true;
                 dialogue2.SetActive(true);
                 hasRun1 = true;
             }
@@ -69,6 +72,7 @@ public class Chapter2Dialogue : MonoBehaviour
         {
             if (restaurantCollider.dialogueStart)
             {
+                audioManager.jumpScare = true;
                 dialogue3.SetActive(true);
                 hasRun2 = true;
             }
