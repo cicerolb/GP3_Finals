@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HandsAnimation : MonoBehaviour
 {
@@ -29,6 +30,12 @@ public class HandsAnimation : MonoBehaviour
         else if (puzzleChecker.prologuePuzzle)
         {
             prologuePuzzleManager = GameObject.FindGameObjectWithTag("Puzzle").GetComponent<ProloguePuzzleManager>();
+        }
+
+        if (SceneManager.GetActiveScene().name == "Loop 2")
+        {
+            flashlightAnimation = true;
+            isFlashlightOn = true;
         }
     }
 
