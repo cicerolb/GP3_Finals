@@ -32,4 +32,5 @@ public class AreaCollider : MonoBehaviour
             dialogueStart = false;
         }
     }
+
 }

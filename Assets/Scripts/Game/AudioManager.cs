@@ -5,17 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
-    // Audio Sources
+    // Audio Sources and Game Objects
     [SerializeField] AudioSource footSteps;
     [SerializeField] GameObject enemyFootStepsSound;
     [SerializeField] AudioSource jumpScareSound;
     [SerializeField] AudioSource chaseSound;
+    [SerializeField] GameObject mazeMusicSound;
+    [SerializeField] GameObject cricketSound;
+
 
     // Bools
     public bool enemyFootSteps = false;
     public bool jumpScare = false;
     public bool chase = false;
     public bool chaseStop = false;
+    public bool mazeMusic = false;
+
+    // Other Scripts
+    [SerializeField] BackgroundNoise backgroundNoise;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +36,8 @@ public class AudioManager : MonoBehaviour
         EnemyFootStepsAudio();
         JumpScareAudio();
         ChaseAudio();
+        MazeMusic();
+        CricketSound();
     }
 
     void EnemyFootStepsAudio()
@@ -68,6 +77,40 @@ public class AudioManager : MonoBehaviour
         if (chaseStop)
         {
             chaseSound.Stop();
+        }
+    }
+
+    void MazeMusic()
+    {
+        backgroundNoise = GameObject.Find("SilentSpot").GetComponent<BackgroundNoise>();
+
+        if (mazeMusic)
+        {
+            mazeMusicSound.SetActive(true);
+            if (backgroundNoise.insideSchool)
+            {
+                cricketSound.SetActive(false);
+            }
+        }
+        else
+        {
+            mazeMusicSound.SetActive(false);
+            if (!backgroundNoise.insideSchool)
+            {
+                cricketSound.SetActive(true);
+            }
+        }
+    }
+
+    void CricketSound()
+    {
+        if (backgroundNoise.insideSchool || mazeMusic)
+        {
+            cricketSound.SetActive(false);
+        }
+        else if (!backgroundNoise.insideSchool || !mazeMusic)
+        {
+            cricketSound.SetActive(true);
         }
     }
 

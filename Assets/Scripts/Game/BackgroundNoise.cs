@@ -5,6 +5,7 @@ using UnityEngine;
 public class BackgroundNoise : MonoBehaviour
 {
     [SerializeField] GameObject crickets;
+    public bool insideSchool = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +22,7 @@ public class BackgroundNoise : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            crickets.SetActive(false);
+            insideSchool = true;
         }
     }
 
@@ -29,7 +30,7 @@ public class BackgroundNoise : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            crickets.SetActive(true);
+            insideSchool = false;
         }
     }
 }

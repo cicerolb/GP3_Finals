@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Final_Scenes/Loop 3.unity
     guid: b10c5dd05b9fd8c40a31dafd0a8eb614
+  - enabled: 1
+    path: Assets/Scenes/Final_Scenes/Loop 4.unity
+    guid: a686ca9ef06eed4489cfd9b41c275dda
   m_configObjects: {}
