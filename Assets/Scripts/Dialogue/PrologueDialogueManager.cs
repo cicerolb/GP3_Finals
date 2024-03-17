@@ -70,14 +70,16 @@ public class DialogueManager : MonoBehaviour
     }
     public void Dialogue3Proc()
     {
-        umbrellaManager = GameObject.Find("Umbrella").GetComponent<UmbrellaManager>();
-
-        if (umbrellaManager.changeScene == true)
+        if (umbrellaTable != null && umbrellaTable.activeSelf)
         {
-            dialogue3.SetActive(true);
-            umbrellaManager.changeScene = false;
+            umbrellaManager = GameObject.Find("Umbrella").GetComponent<UmbrellaManager>();
+            if (umbrellaManager.changeScene == true)
+            {
+                dialogue3.SetActive(true);
+                umbrellaManager.changeScene = false;
+            }
         }
-
+     
     }
 
     void Dialogue1()

@@ -13,6 +13,9 @@ TagManager:
   - Dial Puzzle
   - Puzzle
   - Game Manager
+  - Dialogue
+  - Umbrella
+  - Dumpster
   layers:
   - Default
   - TransparentFX
