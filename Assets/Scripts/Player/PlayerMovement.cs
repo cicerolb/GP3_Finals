@@ -48,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
         canMove = true;
         controller = GetComponent<CharacterController>();
         
-        audioManager = GameObject.Find("SceneAudioManager").GetComponent<AudioManager>();
         playerCamera = GameObject.FindGameObjectWithTag("Player Camera");
+        audioManager = GameObject.Find("SceneAudioManager").GetComponent<AudioManager>();
     }
 
     // Update is called once per frame
@@ -147,7 +147,11 @@ public class PlayerMovement : MonoBehaviour
                 footstep.SetActive(true);
                 isMoving = true;
                 canSprint = true;
-                audioManager.enemyFootSteps = true;
+                if (audioManager != null)
+                {
+                    audioManager.enemyFootSteps = true;
+                }
+
 
 
             }
@@ -173,8 +177,12 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator StopEnemyFootStepsAudio()
     {
-        yield return new WaitForSeconds(0.5f);
-        audioManager.enemyFootSteps = false;
+        if (audioManager != null)
+        {
+            yield return new WaitForSeconds(0.5f);
+            audioManager.enemyFootSteps = false;
+        }
+
     }
 
 }

@@ -68,7 +68,7 @@ public class Chapter4DialogueManager : MonoBehaviour
 
     void MazeAudioStart()
     {
-        mazeCollider = GameObject.Find("Maze").GetComponent<AreaCollider>();
+        mazeCollider = GameObject.Find("MazeCollider").GetComponent<AreaCollider>();
 
         if (mazeCollider.dialogueStart)
         {

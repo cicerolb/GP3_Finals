@@ -27,7 +27,7 @@ public class AudioManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        cricketSound = GameObject.Find("Crickets");
     }
 
     // Update is called once per frame
@@ -82,28 +82,33 @@ public class AudioManager : MonoBehaviour
 
     void MazeMusic()
     {
-        backgroundNoise = GameObject.Find("SilentSpot").GetComponent<BackgroundNoise>();
+        if (SceneManager.GetActiveScene().name == "Loop 4")
+        {
+            backgroundNoise = GameObject.Find("SilentSpot").GetComponent<BackgroundNoise>();
 
-        if (mazeMusic)
-        {
-            mazeMusicSound.SetActive(true);
-            if (backgroundNoise.insideSchool)
+            if (mazeMusic)
             {
-                cricketSound.SetActive(false);
+                mazeMusicSound.SetActive(true);
+                if (backgroundNoise.insideSchool)
+                {
+                    cricketSound.SetActive(false);
+                }
+            }
+            else
+            {
+                mazeMusicSound.SetActive(false);
+                if (!backgroundNoise.insideSchool)
+                {
+                    cricketSound.SetActive(true);
+                }
             }
         }
-        else
-        {
-            mazeMusicSound.SetActive(false);
-            if (!backgroundNoise.insideSchool)
-            {
-                cricketSound.SetActive(true);
-            }
-        }
+        
     }
 
     void CricketSound()
     {
+        backgroundNoise = GameObject.Find("SilentSpot").GetComponent<BackgroundNoise>();
         if (backgroundNoise.insideSchool || mazeMusic)
         {
             cricketSound.SetActive(false);
