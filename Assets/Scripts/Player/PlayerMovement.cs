@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -39,13 +40,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject footstep;
     [SerializeField] private GameObject dialogue;
 
+    [SerializeField] AudioManager audioManager;
+
     // Start is called before the first frame update
     void Start()
     {
         canMove = true;
         controller = GetComponent<CharacterController>();
         
-
+        audioManager = GameObject.Find("SceneAudioManager").GetComponent<AudioManager>();
         playerCamera = GameObject.FindGameObjectWithTag("Player Camera");
     }
 
@@ -144,12 +147,16 @@ public class PlayerMovement : MonoBehaviour
                 footstep.SetActive(true);
                 isMoving = true;
                 canSprint = true;
+                audioManager.enemyFootSteps = true;
+
+
             }
             else
             {
                 footstep.SetActive(false);
                 isMoving = false;
                 canSprint = false;
+                StartCoroutine(StopEnemyFootStepsAudio());
             }
 
 
@@ -159,11 +166,15 @@ public class PlayerMovement : MonoBehaviour
         {
             footstep.SetActive(false);
             isMoving = false;
+            StartCoroutine(StopEnemyFootStepsAudio());
         }
 
-        
+    }
 
-
+    IEnumerator StopEnemyFootStepsAudio()
+    {
+        yield return new WaitForSeconds(0.5f);
+        audioManager.enemyFootSteps = false;
     }
 
 }

@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     // Audio Sources
     [SerializeField] AudioSource footSteps;
-    [SerializeField] AudioSource enemyFootStepsSound;
+    [SerializeField] GameObject enemyFootStepsSound;
     [SerializeField] AudioSource jumpScareSound;
     [SerializeField] AudioSource chaseSound;
 
@@ -32,12 +33,20 @@ public class AudioManager : MonoBehaviour
 
     void EnemyFootStepsAudio()
     {
-        if (enemyFootSteps)
+        if (SceneManager.GetActiveScene().name == "Loop 2")
         {
-            enemyFootStepsSound.Play();
-            enemyFootSteps = false;
+            if (enemyFootSteps)
+            {
+                enemyFootStepsSound.SetActive(true);
+            }
+            else
+            {
+                enemyFootStepsSound.SetActive(false);
+            }
         }
+        
     }
+
 
     void JumpScareAudio()
     {

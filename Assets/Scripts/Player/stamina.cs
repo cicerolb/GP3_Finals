@@ -30,9 +30,6 @@ public class Stamina : MonoBehaviour
 
         staminaBar.value = playerStamina;
 
-        Debug.Log("Player Stamina: " + playerStamina);
-        Debug.Log("Slider Value: " + staminaBar.value);
-
         if (playerStamina <= 0)
         {
             StartCoroutine(StaminaDelay());
