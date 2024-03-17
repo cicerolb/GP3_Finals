@@ -253,6 +253,7 @@ MonoBehaviour:
   canSprint: 1
   footstep: {fileID: 1837405583296928083}
   dialogue: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &6671524711035859423
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -848,7 +849,7 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.02
+  m_Intensity: 0.09
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -891,7 +892,7 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 11441
+  m_ColorTemperature: 6191
   m_UseColorTemperature: 1
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
