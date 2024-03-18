@@ -22,7 +22,6 @@ public class CooldownScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        cooldownDone = false;
         cooldown += Time.deltaTime;
 
         if (cooldown >= maxCooldown)

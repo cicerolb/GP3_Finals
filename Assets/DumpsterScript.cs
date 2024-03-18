@@ -36,24 +36,13 @@ public class DumpsterScript : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 ExitDumpster();
-                //enterDumpsterStart = false;
-                //cooldownScript.cooldownDone = false;
             }
         }
 
         if (enterDumpsterStart)
         {
-            cooldownBar.SetActive(true);
-            cooldownScript = cooldownBar.GetComponent<CooldownScript>();
-
-            if (cooldownScript.cooldownDone) 
-            {
-                enterDumpsterStart = false;
-                EnterDumpster();
-            }
-
-
-
+            EnterDumpster();
+            enterDumpsterStart = false;
         }
 
     }

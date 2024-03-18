@@ -41,7 +41,6 @@ public class PlayerRayCast : MonoBehaviour
                     if (currentDumpster != null)
                     {
                         currentDumpster.enterDumpsterStart = true;
-                        Debug.Log("TITE");
                     }
                 }
                
