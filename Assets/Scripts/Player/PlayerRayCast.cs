@@ -10,8 +10,11 @@ public class PlayerRayCast : MonoBehaviour
     [SerializeField] private float pickUpDistance;
     private RaycastHit raycastHit;
     [SerializeField] private GameObject indicator;
-    [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] private GameObject itemScreen;
+
+    // Other Scripts
+    [SerializeField] private InventoryManager inventoryManager;
+    [SerializeField] DumpsterScript currentDumpster;
 
     // Start is called before the first frame update
     void Start()
@@ -28,26 +31,18 @@ public class PlayerRayCast : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
 
-                //itemScreen.SetActive(true);
-
-
-                //indicator.SetActive(false);
-                //if (raycastHit.collider.gameObject.layer == LayerMask.NameToLayer("Umbrella"))
-                //{
-                //    inventoryManager.umbrella = true;
-                //    Debug.Log("ashjnkdjkhasd");
-                //}
-
                 if (raycastHit.collider.CompareTag("Umbrella"))
                 {
                     itemScreen.SetActive(true);
                 }
-
-                if (raycastHit.collider.CompareTag("Dumpster"))
+                else if (raycastHit.collider.CompareTag("Dumpster"))
                 {
-                    DumpsterScript dumpsterScript;
-                    dumpsterScript = raycastHit.collider.GetComponent<DumpsterScript>();
-                    dumpsterScript.dumpsterHide = true;
+                    currentDumpster = raycastHit.collider.GetComponent<DumpsterScript>();
+                    if (currentDumpster != null)
+                    {
+                        currentDumpster.enterDumpsterStart = true;
+                        Debug.Log("TITE");
+                    }
                 }
                
             }
@@ -59,8 +54,4 @@ public class PlayerRayCast : MonoBehaviour
         }
     }
 
-    void DumpsterRayCast()
-    {
-
-    }
 }
