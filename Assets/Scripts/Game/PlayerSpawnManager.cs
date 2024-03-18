@@ -21,6 +21,7 @@ public class PlayerSpawnManager : MonoBehaviour
         player.transform.position = spawn.transform.position;
         player.transform.rotation = spawn.transform.rotation;
         player.SetActive(true);
+
     }
 
     // Update is called once per frame

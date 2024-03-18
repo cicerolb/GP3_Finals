@@ -7,32 +7,36 @@ using UnityEngine.SceneManagement;
 
 public class LoopManager : MonoBehaviour
 {
+    public Animator animator;
     public GameObject player;
     [SerializeField] Object scene;
-    // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        GameObject fadeUI = GameObject.Find("BlackFade");
+        animator = fadeUI.GetComponent<Animator>();
 
+        animator.SetBool("FadeOut", true);
     }
 
-
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator LoadSceneAfterFade(string sceneName)
     {
-       
+        // Wait for the fade animation to finish
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+
+        // Load the next scene
+        SceneManager.LoadScene(sceneName);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
-
         if (other.CompareTag("Player"))
         {
-             SceneManager.LoadScene(scene.name);          
+            // Trigger fade-out animation
+            animator.SetBool("FadeOut", false);
+
+            // Start coroutine to load scene after fade animation finishes
+            StartCoroutine(LoadSceneAfterFade(scene.name));
         }
-        
     }
 
 }
