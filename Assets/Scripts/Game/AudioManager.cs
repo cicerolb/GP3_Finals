@@ -13,6 +13,7 @@ public class AudioManager : MonoBehaviour
     [SerializeField] GameObject mazeMusicSound;
     [SerializeField] GameObject cricketSound;
     [SerializeField] GameObject dumpsterSound;
+    [SerializeField] GameObject stoneGateSound;
 
 
     // Bools
@@ -22,6 +23,7 @@ public class AudioManager : MonoBehaviour
     public bool chaseStop = false;
     public bool mazeMusic = false;
     public bool dumpster = false;
+    public bool stoneGate = false;
 
     // Other Scripts
     [SerializeField] BackgroundNoise backgroundNoise;
@@ -41,6 +43,7 @@ public class AudioManager : MonoBehaviour
         MazeMusic();
         CricketSound();
         DumpsterSound();
+        StoneGateSound();
     }
 
     void EnemyFootStepsAudio()
@@ -131,6 +134,14 @@ public class AudioManager : MonoBehaviour
         else
         {
             dumpsterSound.SetActive(false);
+        }
+    }
+
+    void StoneGateSound()
+    {
+        if (stoneGate)
+        {
+            stoneGateSound.SetActive(true);
         }
     }
 

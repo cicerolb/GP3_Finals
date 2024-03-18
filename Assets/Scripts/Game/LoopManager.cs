@@ -7,15 +7,11 @@ using UnityEngine.SceneManagement;
 
 public class LoopManager : MonoBehaviour
 {
-    public GameObject teleportPosition;
-    bool teleported = false;
     public GameObject player;
-    public bool puzzleComplete = false;
     [SerializeField] Object scene;
     // Start is called before the first frame update
     void Start()
     {
-        puzzleComplete = false;
         player = GameObject.FindGameObjectWithTag("Player");
 
     }
@@ -34,19 +30,7 @@ public class LoopManager : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-             SceneManager.LoadScene(scene.name);
-            //if (!puzzleComplete)
-            //{
-            //    player.SetActive(false);
-            //    player.transform.position = teleportPosition.transform.position;
-            //    player.transform.rotation = teleportPosition.transform.rotation;
-            //    player.SetActive(true);
-            //}
-            
-            
-               
-            
-            
+             SceneManager.LoadScene(scene.name);          
         }
         
     }

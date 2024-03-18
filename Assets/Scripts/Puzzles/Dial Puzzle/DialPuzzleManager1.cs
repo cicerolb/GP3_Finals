@@ -13,35 +13,37 @@ public class DialPuzzleManager1 : MonoBehaviour
     [SerializeField] PlayerMovement playerMovement;
     [SerializeField]HandsAnimation handsAnimation;
 
-
+    // Audio Sources ---
     public AudioSource audioSource;
     
-   
+    // Game Objects ---
     [SerializeField] private GameObject player;
-    [SerializeField] private Vector3[] dial;
     [SerializeField] private GameObject[] dialMaterials;
     [SerializeField] private Transform arrow;
-    [SerializeField] private TextMeshProUGUI debug;
-    int i = 0;
-    int x = 0;
-    private int rotationsRemaining = 0;
-
-    bool dial0, dial1, dial2, dial3, dial4, dial5, dial6;
-
-    public float cooldownTime = 5;
-    public int desiredOutput;
-    bool materialChanged = true;
-    public bool dialPuzzleStart = false;
-
-
-
-    float dist;
-    CinemachineVirtualCamera playerCamera;
-    CinemachineVirtualCamera dialPuzzleCamera;
-
+    [SerializeField] private Vector3[] dial;
     public GameObject dialChoices;
     public GameObject pelvisItem;
     public SpriteRenderer flashlight;
+
+    // Values ---
+    int i = 0;
+    int x = 0;
+    private int rotationsRemaining = 0;
+    public float cooldownTime = 5;
+    public int desiredOutput;
+    float dist;
+
+    // Booleans ---
+    bool dial0, dial1, dial2, dial3, dial4, dial5, dial6;
+    bool materialChanged = true;
+    public bool dialPuzzleStart = false;
+    public bool puzzleComplete = false;
+
+    // Cinemachines ---
+    CinemachineVirtualCamera playerCamera;
+    CinemachineVirtualCamera dialPuzzleCamera;
+
+
 
     // Start is called before the first frame update
 
@@ -203,7 +205,7 @@ public class DialPuzzleManager1 : MonoBehaviour
             if (dial0 == true && dial1 == false && dial2 == true && dial3 == true && dial4 == false && dial5 == false && dial6 == false)
             {
                 Debug.Log("PUZZLE COMPLETE");
-                loopManager.puzzleComplete = true;
+                puzzleComplete = true;
                 pelvisItem.SetActive(true);
                 dialPuzzleStart = false;
             }
@@ -218,7 +220,7 @@ public class DialPuzzleManager1 : MonoBehaviour
 
         if (dist < 3.5)
         {
-            if (!loopManager.puzzleComplete)
+            if (!puzzleComplete)
             {
                 if (Input.GetKeyDown(KeyCode.E))
                 {

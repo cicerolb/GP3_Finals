@@ -29,14 +29,5 @@ public class ArrowMateriaChanger : MonoBehaviour
         {
             x = 0;
         }
-
-        if (loopManager.puzzleComplete)
-        {
-            blue = true;
-        }
-        else
-        {
-            blue = false;
-        }
     }
 }
