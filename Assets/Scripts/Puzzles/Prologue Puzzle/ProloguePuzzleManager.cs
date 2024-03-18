@@ -28,7 +28,6 @@ public class ProloguePuzzleManager : MonoBehaviour
         {
             flashlight.enabled = true;
         }
-        loopManager.puzzleComplete = true;
 
     }
 }

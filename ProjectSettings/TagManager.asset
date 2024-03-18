@@ -16,6 +16,8 @@ TagManager:
   - Dialogue
   - Umbrella
   - Dumpster
+  - WheelInteractable
+  - BusWheel
   layers:
   - Default
   - TransparentFX
@@ -27,8 +29,8 @@ TagManager:
   - Obstacle
   - Pickup
   - Umbrella
-  - 
-  - 
+  - Wheels
+  - Walkable
   - 
   - 
   - 

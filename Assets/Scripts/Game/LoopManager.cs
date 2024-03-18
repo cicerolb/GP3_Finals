@@ -7,48 +7,36 @@ using UnityEngine.SceneManagement;
 
 public class LoopManager : MonoBehaviour
 {
-    public GameObject teleportPosition;
-    bool teleported = false;
+    public Animator animator;
     public GameObject player;
-    public bool puzzleComplete = false;
     [SerializeField] Object scene;
-    // Start is called before the first frame update
     void Start()
     {
-        puzzleComplete = false;
-        player = GameObject.FindGameObjectWithTag("Player");
+        GameObject fadeUI = GameObject.Find("BlackFade");
+        animator = fadeUI.GetComponent<Animator>();
 
+        animator.SetBool("FadeOut", true);
     }
 
-
-
-    // Update is called once per frame
-    void Update()
+    IEnumerator LoadSceneAfterFade(string sceneName)
     {
-       
+        // Wait for the fade animation to finish
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorClipInfo(0).Length);
+
+        // Load the next scene
+        SceneManager.LoadScene(sceneName);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-
-
         if (other.CompareTag("Player"))
         {
-             SceneManager.LoadScene(scene.name);
-            //if (!puzzleComplete)
-            //{
-            //    player.SetActive(false);
-            //    player.transform.position = teleportPosition.transform.position;
-            //    player.transform.rotation = teleportPosition.transform.rotation;
-            //    player.SetActive(true);
-            //}
-            
-            
-               
-            
-            
+            // Trigger fade-out animation
+            animator.SetBool("FadeOut", false);
+
+            // Start coroutine to load scene after fade animation finishes
+            StartCoroutine(LoadSceneAfterFade(scene.name));
         }
-        
     }
 
 }
