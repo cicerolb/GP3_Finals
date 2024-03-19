@@ -15,6 +15,7 @@ public class PlayerRayCast : MonoBehaviour
     // Other Scripts
     [SerializeField] private InventoryManager inventoryManager;
     [SerializeField] DumpsterScript currentDumpster;
+    [SerializeField] SewerScript currentSewer;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,14 @@ public class PlayerRayCast : MonoBehaviour
                     if (currentDumpster != null)
                     {
                         currentDumpster.enterDumpsterStart = true;
+                    }
+                }
+                else if (raycastHit.collider.CompareTag("Sewer"))
+                {
+                    currentSewer = raycastHit.collider.GetComponent<SewerScript>();
+                    if (currentSewer != null)
+                    {
+                        currentSewer.enterSewerStart = true;
                     }
                 }
                

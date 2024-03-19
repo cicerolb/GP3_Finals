@@ -8,18 +8,20 @@ public class GameManagerTransform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        player = GameObject.Find("Player");
         if (player != null)
         {
             player = GameObject.Find("Player");
             if (player != null)
             {
                 gameObject.transform.position = player.transform.position;
+                gameObject.transform.rotation = player.transform.rotation;
 
             }
         }

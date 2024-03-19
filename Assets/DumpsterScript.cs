@@ -6,6 +6,7 @@ public class DumpsterScript : MonoBehaviour
 {
     // Game Objects
     private GameObject player;
+    [SerializeField] GameObject dialPuzzleCamera;
     [SerializeField] private GameObject cooldownBar;
 
     // Other Scripts
@@ -53,6 +54,10 @@ public class DumpsterScript : MonoBehaviour
         audioManager.dumpster = true;
         hideScreen.SetActive(true);
         player.SetActive(false);
+        if (dialPuzzleCamera != null)
+        {
+            dialPuzzleCamera.SetActive(false);
+        }
     }
 
     private void ExitDumpster()
@@ -61,5 +66,9 @@ public class DumpsterScript : MonoBehaviour
         audioManager.dumpster = false;
         hideScreen.SetActive(false);
         player.SetActive(true);
+        if (dialPuzzleCamera != null)
+        {
+            dialPuzzleCamera.SetActive(true);
+        }
     }
 }
