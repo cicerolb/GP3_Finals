@@ -282,6 +282,7 @@ MonoBehaviour:
   itemScreen: {fileID: 0}
   inventoryManager: {fileID: 0}
   currentDumpster: {fileID: 0}
+  currentSewer: {fileID: 0}
 --- !u!114 &8240626774797099041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -708,7 +709,7 @@ GameObject:
   - component: {fileID: 2297726467331523939}
   - component: {fileID: 6095085573181764712}
   m_Layer: 0
-  m_Name: EtoYungIlaw
+  m_Name: SpotLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -723,7 +724,7 @@ Transform:
   m_GameObject: {fileID: 5556039361222216536}
   serializedVersion: 2
   m_LocalRotation: {x: -0.127506, y: -0.062481817, z: -0.07390819, w: 0.9871048}
-  m_LocalPosition: {x: -1.64, y: 1.68, z: -0.01}
+  m_LocalPosition: {x: 2.4, y: -8.6, z: -37.7}
   m_LocalScale: {x: 100.21674, y: 18.678602, z: 17.699022}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -741,7 +742,7 @@ Light:
   m_Type: 0
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 343.77
+  m_Intensity: 1
   m_Range: 375.96542
   m_SpotAngle: 63.643375
   m_InnerSpotAngle: 16.02985
@@ -994,6 +995,7 @@ GameObject:
   - component: {fileID: 3460641337540897576}
   - component: {fileID: 459733812182967890}
   - component: {fileID: 6292677766586895993}
+  - component: {fileID: 7030873590785326068}
   m_Layer: 0
   m_Name: flashlight
   m_TagString: Untagged
@@ -1126,6 +1128,18 @@ MonoBehaviour:
   light: {fileID: 5556039361222216536}
   lightOn: 1
   handAnimation: {fileID: 459733812182967890}
+--- !u!114 &7030873590785326068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7367200745657438557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f20ac5d8cad948d42839ecbf93c6b5ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2859373502554109062
 PrefabInstance:
   m_ObjectHideFlags: 0

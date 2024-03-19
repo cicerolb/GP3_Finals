@@ -94,7 +94,7 @@ public class DialPuzzleManager1 : MonoBehaviour
 
         if (!dialPuzzleStart)
         {
-            dialPuzzleCamera.Priority = 9;
+            dialPuzzleCamera.Priority = 8;
             playerMovement.canMove = true;
             playerMovement.canLook = true;
             playerMovement.cursorLock = true;

@@ -18,6 +18,7 @@ TagManager:
   - Dumpster
   - WheelInteractable
   - BusWheel
+  - Sewer
   layers:
   - Default
   - TransparentFX

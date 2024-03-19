@@ -38973,9 +38973,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8791892398815413144, guid: 088fe869a68343e43aa4d79d4f7644e7,
         type: 3}
+      propertyPath: maxStamina
+      value: 75
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791892398815413144, guid: 088fe869a68343e43aa4d79d4f7644e7,
+        type: 3}
       propertyPath: staminaBar
       value: 
       objectReference: {fileID: 1501773458}
+    - target: {fileID: 8791892398815413144, guid: 088fe869a68343e43aa4d79d4f7644e7,
+        type: 3}
+      propertyPath: playerStamina
+      value: 75
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6671524711035859423, guid: 088fe869a68343e43aa4d79d4f7644e7, type: 3}
     - {fileID: 1558693422294028734, guid: 088fe869a68343e43aa4d79d4f7644e7, type: 3}
