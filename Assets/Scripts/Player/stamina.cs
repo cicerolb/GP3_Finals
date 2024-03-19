@@ -26,11 +26,11 @@ public class Stamina : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (playerMovement.isSprinting)
         {
             DecreaseEnergy();
         }
-        else if (playerStamina > 0 && playerStamina < maxStamina)
+        else if (playerStamina > 0 && playerStamina < maxStamina && !playerMovement.isSprinting)
         {
             IncreaseEnergy();
         }

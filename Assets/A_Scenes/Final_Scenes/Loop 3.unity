@@ -55181,7 +55181,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 732041038}
   lines:
-  - Go to your friends
+  - Go to the station
   textSpeed: 0.01
   objectiveSkip: {fileID: 0}
 --- !u!1 &2040264098 stripped
