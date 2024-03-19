@@ -12,7 +12,7 @@ public class Stamina : MonoBehaviour
 
 
     public float playerStamina;
-    float maxStamina;
+    [SerializeField]float maxStamina;
 
     public Slider staminaBar;
 
@@ -44,11 +44,16 @@ public class Stamina : MonoBehaviour
 
         if (playerStamina > 0)
         {
-            playerMovement.canSprint = true;
+            if (!playerMovement.dialogueActive)
+            {
+                playerMovement.canSprint = true;
+            }
+            
         }
         else
         {
             playerMovement.canSprint = false;
+            playerMovement.isSprinting = false;
         }
     }
 

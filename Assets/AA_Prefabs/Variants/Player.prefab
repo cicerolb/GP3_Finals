@@ -240,6 +240,8 @@ MonoBehaviour:
   cursorLock: 1
   mouseSensitivity: 3.5
   speed: 6
+  walkSpeed: 6
+  sprintSpeed: 12
   moveSmoothTime: 0.1
   gravity: -30
   groundCheck: {fileID: 2129381970633898160}
@@ -251,6 +253,8 @@ MonoBehaviour:
   canMove: 1
   canLook: 1
   canSprint: 1
+  isSprinting: 0
+  dialogueActive: 0
   footstep: {fileID: 1837405583296928083}
   dialogue: {fileID: 0}
   audioManager: {fileID: 0}
@@ -273,10 +277,11 @@ MonoBehaviour:
   hideLayerMask:
     serializedVersion: 2
     m_Bits: 0
-  pickUpDistance: 20
+  pickUpDistance: 2
   indicator: {fileID: 0}
-  inventoryManager: {fileID: 0}
   itemScreen: {fileID: 0}
+  inventoryManager: {fileID: 0}
+  currentDumpster: {fileID: 0}
 --- !u!114 &8240626774797099041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,6 +296,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   umbrella: 0
   flashlight: 0
+  wheel1: 0
+  wheel2: 0
+  wheel3: 0
+  wheel4: 0
 --- !u!143 &8690757491612032853
 CharacterController:
   m_ObjectHideFlags: 0
@@ -364,7 +373,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80af86b0c4349f48b925d12fae1d592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStamina: 500
+  playerStamina: 100
+  maxStamina: 100
   staminaBar: {fileID: 0}
 --- !u!1 &2958942629734045856
 GameObject:

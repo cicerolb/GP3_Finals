@@ -22,6 +22,8 @@ public class DialogueScript : MonoBehaviour
     {
         playerMovement.speed = 0f;
         playerMovement.canSprint = false;
+        playerMovement.isSprinting = false;
+        playerMovement.dialogueActive = true;
         textComponent.text = string.Empty;
         StartDialogue();
     }
@@ -48,7 +50,6 @@ public class DialogueScript : MonoBehaviour
         index = 0;
         StartCoroutine(TypeLine());
     }
-
     IEnumerator TypeLine()
     {
         foreach (char c in lines[index].ToCharArray())
@@ -69,7 +70,8 @@ public class DialogueScript : MonoBehaviour
         else
         {
             playerMovement.canSprint = true;
-            playerMovement.speed = 6f;
+            playerMovement.speed = 6.0f;
+            playerMovement.dialogueActive = false;
             gameObject.SetActive(false);
 
         }

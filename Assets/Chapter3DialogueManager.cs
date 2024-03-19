@@ -7,6 +7,9 @@ public class Chapter3DialogueManager : MonoBehaviour
     // Player
     [SerializeField] private GameObject player;
 
+    // Enemy
+    [SerializeField] GameObject enemy;
+
     // Dialogues
     [SerializeField] private GameObject dialogue1;
     [SerializeField] private GameObject dialogue2;
@@ -60,6 +63,7 @@ public class Chapter3DialogueManager : MonoBehaviour
             {
                 audioManager.chase = true;
                 dialogue2.SetActive(true);
+                enemy.SetActive(true);
                 hasRun1 = true;
             }
         }
@@ -74,6 +78,7 @@ public class Chapter3DialogueManager : MonoBehaviour
             if (restaurantCollider.dialogueStart)
             {
                 audioManager.chaseStop = true;
+                enemy.SetActive(false);
                 dialogue3.SetActive(true);
                 hasRun2 = true;
             }

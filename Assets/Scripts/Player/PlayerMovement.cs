@@ -5,12 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Player Controls
     [SerializeField] GameObject playerCamera;
     [SerializeField]
     [Range(0.0f, 0.5f)] float mouseSmoothTime = 0.03f;
     [SerializeField] public bool cursorLock = true;
     [SerializeField] float mouseSensitivity = 3.5f;
     [SerializeField] public float speed = 6.0f;
+    [SerializeField] public float walkSpeed = 6.0f;
+    [SerializeField] public float sprintSpeed = 12.0f;
     [SerializeField]
     [Range(0.0f, 0.5f)] float moveSmoothTime = 0.0f;
     [SerializeField] float gravity = -30f;
@@ -30,11 +33,15 @@ public class PlayerMovement : MonoBehaviour
     Vector2 currentDirVelocity;
     Vector3 velocity;
 
-    public bool isMoving;
 
+
+    // booleans
+    public bool isMoving;
     public bool canMove = true;
     public bool canLook = true;
     public bool canSprint = true;
+    public bool isSprinting = false;
+    public bool dialogueActive = false;
 
 
     [SerializeField] private GameObject footstep;
@@ -85,18 +92,39 @@ public class PlayerMovement : MonoBehaviour
             
         }
 
-        if (canSprint)
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (canSprint)
             {
-                speed = 12;
+                isSprinting = true;
             }
-            else if (Input.GetKeyUp(KeyCode.LeftShift))
+            else
             {
-                speed = 6;
+                isSprinting = false;
+            }
+
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            if (canSprint)
+            {
+                isSprinting = false;
             }
         }
-        
+
+        if (isSprinting)
+        {
+            speed = sprintSpeed;
+        }
+        else
+        {
+            speed = walkSpeed;
+        }
+
+        if (dialogueActive)
+        {
+            speed = 0f;
+        }
 
     }
 
