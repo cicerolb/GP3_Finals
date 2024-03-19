@@ -11,7 +11,7 @@ public class EnemyAIF : MonoBehaviour
     public Animator aiAnim;
     public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime, idleTime, sightDistance, catchDistance, chaseTime, minChaseTime, maxChaseTime, jumpscareTime;
     public bool walking, chasing;
-    public Transform player;
+    public GameObject player;
     Transform currentDest;
     Vector3 dest;
     int randNum;
@@ -27,7 +27,7 @@ public class EnemyAIF : MonoBehaviour
     }
     void Update()
     {
-        Vector3 direction = (player.position - transform.position).normalized;
+        Vector3 direction = (player.transform.position - transform.position).normalized;
         RaycastHit hit;
         if (Physics.Raycast(transform.position + rayCastOffset, direction, out hit, sightDistance))
         {
@@ -51,24 +51,35 @@ public class EnemyAIF : MonoBehaviour
         }
         if (chasing == true)
         {
-            dest = player.position;
-            ai.destination = dest;
-            ai.speed = chaseSpeed;
-            //aiAnim.ResetTrigger("walk");
-            //aiAnim.ResetTrigger("idle");
-            //aiAnim.SetTrigger("sprint");
-            float distance = Vector3.Distance(player.position, ai.transform.position);
-            if (distance <= catchDistance)
+            if (player.activeSelf)
             {
-                player.gameObject.SetActive(false);
+                dest = player.transform.position;
+                ai.destination = dest;
+                ai.speed = chaseSpeed;
                 //aiAnim.ResetTrigger("walk");
                 //aiAnim.ResetTrigger("idle");
-                //aiAnim.ResetTrigger("sprint");
-                //aiAnim.SetTrigger("jumpscare");
-                StartCoroutine(deathRoutine());
-                chasing = false;
+                //aiAnim.SetTrigger("sprint");
+                float distance = Vector3.Distance(player.transform.position, ai.transform.position);
+                if (distance <= catchDistance)
+                {
+                    player.gameObject.SetActive(false);
+                    //aiAnim.ResetTrigger("walk");
+                    //aiAnim.ResetTrigger("idle");
+                    //aiAnim.ResetTrigger("sprint");
+                    //aiAnim.SetTrigger("jumpscare");
+                    StartCoroutine(deathRoutine());
+                    chasing = false;
+                }
             }
+            
         }
+        if (!player.activeSelf)
+        {
+            chasing = false;
+        }
+
+
+
         if (walking == true)
         {
             dest = currentDest.position;
