@@ -3207,6 +3207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  enemy: {fileID: 0}
   dialogue1: {fileID: 788602877}
   dialogue2: {fileID: 1994828253}
   dialogue3: {fileID: 1745223776}
@@ -4386,6 +4387,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 483588221}
+    - target: {fileID: 277162806421171839, guid: 04f8abb10295c1547a14896bba94671e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 331110772401555662, guid: 04f8abb10295c1547a14896bba94671e,
         type: 3}
       propertyPath: m_Mesh
@@ -5451,6 +5457,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 1705033513}
+    - target: {fileID: 7927665025395737368, guid: 04f8abb10295c1547a14896bba94671e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 7999362938342652747, guid: 04f8abb10295c1547a14896bba94671e,
         type: 3}
       propertyPath: m_Mesh
@@ -5606,6 +5617,11 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 130213897}
+    - target: {fileID: 9177001101780238247, guid: 04f8abb10295c1547a14896bba94671e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 9200662654244060692, guid: 04f8abb10295c1547a14896bba94671e,
         type: 3}
       propertyPath: m_Layer
@@ -8334,7 +8350,7 @@ MonoBehaviour:
   jumpscareTime: 3
   walking: 0
   chasing: 0
-  player: {fileID: 1298111231}
+  player: {fileID: 1298111227}
   destinationAmount: 8
   rayCastOffset: {x: 0, y: 0, z: 0}
   deathScene: Loop 3 Duplicate
