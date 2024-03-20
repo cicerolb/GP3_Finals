@@ -9027,6 +9027,32 @@ PrefabInstance:
       propertyPath: lines.Array.data[3]
       value: I should go now too.
       objectReference: {fileID: 0}
+    - target: {fileID: 7414981243931959115, guid: f96fe1e2ed33de7429347007ffe62536,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1313188783, guid: aca23a62b454b3f4db2f39926b4b7d14,
+        type: 3}
+    - target: {fileID: 7414981243931959115, guid: f96fe1e2ed33de7429347007ffe62536,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414981243931959115, guid: f96fe1e2ed33de7429347007ffe62536,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414981243931959115, guid: f96fe1e2ed33de7429347007ffe62536,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7414981243931959115, guid: f96fe1e2ed33de7429347007ffe62536,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10727,6 +10753,32 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514817259527910304, guid: bdb449462e0afaf41928f9173e5617e0,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1313188783, guid: aca23a62b454b3f4db2f39926b4b7d14,
+        type: 3}
+    - target: {fileID: 7514817259527910304, guid: bdb449462e0afaf41928f9173e5617e0,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514817259527910304, guid: bdb449462e0afaf41928f9173e5617e0,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514817259527910304, guid: bdb449462e0afaf41928f9173e5617e0,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7514817259527910304, guid: bdb449462e0afaf41928f9173e5617e0,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16262,6 +16314,32 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1383057399}
     m_Modifications:
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1313188783, guid: aca23a62b454b3f4db2f39926b4b7d14,
+        type: 3}
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_Pivot.x
@@ -17027,7 +17105,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -1313188783, guid: aca23a62b454b3f4db2f39926b4b7d14, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17400,7 +17478,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -1313188783, guid: aca23a62b454b3f4db2f39926b4b7d14, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -55908,6 +55986,32 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1383057399}
     m_Modifications:
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1313188783, guid: aca23a62b454b3f4db2f39926b4b7d14,
+        type: 3}
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 820349838172673882, guid: ef06a097869fa0a48ad9afb9347d12f6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_Pivot.x
