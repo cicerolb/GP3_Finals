@@ -41,6 +41,8 @@ public class Chapter4DialogueManager : MonoBehaviour
     {
         Dialogue2Proc();
         Dialogue3Proc();
+        MazeAudioStart();
+
     }
 
     private void Dialogue1()
@@ -51,18 +53,32 @@ public class Chapter4DialogueManager : MonoBehaviour
 
     void Dialogue2Proc()
     {
+        mazeEntranceCollider = GameObject.FindGameObjectWithTag("Maze Entrance").GetComponent<AreaCollider>();
 
         if (!hasRun2)
         {
-            schoolExitCollider = GameObject.Find("SchoolExit").GetComponent<AreaCollider>();
-            if (schoolExitCollider.dialogueStart)
+            if (mazeEntranceCollider.dialogueStart)
             {
+                audioManager.chaseStop = true;
                 dialogue2.SetActive(true);
                 hasRun2 = true;
             }
         }
     }
 
+    void MazeAudioStart()
+    {
+        mazeCollider = GameObject.FindGameObjectWithTag("Maze Collider").GetComponent<AreaCollider>();
+
+        if (mazeCollider.dialogueStart)
+        {
+            audioManager.mazeMusic = true;
+        }
+        else
+        {
+            audioManager.mazeMusic = false;
+        }
+    }
 
     void Dialogue3Proc()
     {

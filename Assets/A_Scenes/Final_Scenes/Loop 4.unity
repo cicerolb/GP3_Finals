@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.06675672, g: 0.063728325, b: 0.06327918, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13982,7 +13982,7 @@ GameObject:
   - component: {fileID: 602986032}
   m_Layer: 0
   m_Name: MazeEntrance
-  m_TagString: Untagged
+  m_TagString: Maze Entrance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16072,13 +16072,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   footSteps: {fileID: 0}
-  enemyFootStepsSound: {fileID: 266711275}
-  jumpScareSound: {fileID: 54971739}
+  enemyFootStepsSound: {fileID: 0}
+  jumpScareSound: {fileID: 0}
   chaseSound: {fileID: 1902529472}
   mazeMusicSound: {fileID: 247957949}
-  cricketSound: {fileID: 819220144}
+  cricketSound: {fileID: 0}
   dumpsterSound: {fileID: 632488177}
-  stoneGateSound: {fileID: 1422593929}
+  stoneGateSound: {fileID: 0}
   sewerSound: {fileID: 1709399280}
   enemyFootSteps: 0
   jumpScare: 0
@@ -30655,7 +30655,7 @@ GameObject:
   - component: {fileID: 1519246601}
   m_Layer: 0
   m_Name: MazeCollider
-  m_TagString: Untagged
+  m_TagString: Maze Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
