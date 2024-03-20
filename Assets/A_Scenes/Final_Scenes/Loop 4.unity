@@ -16078,7 +16078,7 @@ MonoBehaviour:
   mazeMusicSound: {fileID: 247957949}
   cricketSound: {fileID: 0}
   dumpsterSound: {fileID: 632488177}
-  stoneGateSound: {fileID: 0}
+  stoneGateSound: {fileID: 1422593929}
   sewerSound: {fileID: 1709399280}
   enemyFootSteps: 0
   jumpScare: 0
