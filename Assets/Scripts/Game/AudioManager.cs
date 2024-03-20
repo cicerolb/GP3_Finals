@@ -131,14 +131,18 @@ public class AudioManager : MonoBehaviour
 
     void DumpsterSound()
     {
-        if (dumpster)
+        if (dumpsterSound != null)
         {
+            if (dumpster)
+            {
             dumpsterSound.SetActive(true);
-        }
-        else
-        {
+            }
+            else
+            {
             dumpsterSound.SetActive(false);
+            }
         }
+        
     }
 
     void StoneGateSound()

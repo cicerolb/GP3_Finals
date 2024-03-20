@@ -838,7 +838,7 @@ GameObject:
   - component: {fileID: 24011099}
   - component: {fileID: 24011100}
   m_Layer: 0
-  m_Name: Loop4DialogueManager
+  m_Name: Loop5DialogueManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,10 +868,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 24011098}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e38e6965892624a4c85d11690480e8b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 9d24a4e4595822e42bb0a3d1e7902a39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1344706323}
   dialogue1: {fileID: 788602877}
   dialogue2: {fileID: 1994828253}
   dialogue3: {fileID: 1745223776}
@@ -880,7 +880,7 @@ MonoBehaviour:
   objective2: {fileID: 323657728}
   objectiveSkip: {fileID: 0}
   mazeEntranceCollider: {fileID: 0}
-  schoolExitCollider: {fileID: 0}
+  schoolExitCollider: {fileID: 1890969667}
   mazeCollider: {fileID: 0}
   audioManager: {fileID: 0}
   hasRun1: 0
@@ -9642,7 +9642,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 45404921}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 511324603042705609, guid: ad6354e8c9b992a4c8b8acc85ff427b7, type: 3}
+    - {fileID: 4927628367918282112, guid: ad6354e8c9b992a4c8b8acc85ff427b7, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad6354e8c9b992a4c8b8acc85ff427b7, type: 3}
@@ -11725,6 +11727,7 @@ MonoBehaviour:
   cricketSound: {fileID: 819220144}
   dumpsterSound: {fileID: 0}
   stoneGateSound: {fileID: 0}
+  sewerSound: {fileID: 0}
   enemyFootSteps: 0
   jumpScare: 0
   chase: 0
@@ -11732,6 +11735,7 @@ MonoBehaviour:
   mazeMusic: 0
   dumpster: 0
   stoneGate: 0
+  sewer: 0
   backgroundNoise: {fileID: 0}
 --- !u!1 &788602877 stripped
 GameObject:
@@ -39037,6 +39041,7 @@ MonoBehaviour:
   itemScreen: {fileID: 2015602599}
   inventoryManager: {fileID: 0}
   currentDumpster: {fileID: 0}
+  currentSewer: {fileID: 0}
 --- !u!1 &1345695143
 GameObject:
   m_ObjectHideFlags: 0
@@ -40597,12 +40602,12 @@ PrefabInstance:
     - target: {fileID: 8549184099740910392, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: lines.Array.data[0]
-      value: 'This again???  '
+      value: Of course...
       objectReference: {fileID: 0}
     - target: {fileID: 8549184099740910392, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: lines.Array.data[1]
-      value: '...no. '
+      value: Let's get this over with.
       objectReference: {fileID: 0}
     - target: {fileID: 8549184099740910392, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
@@ -80468,12 +80473,12 @@ PrefabInstance:
     - target: {fileID: 8549184099740910392, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: lines.Array.data[0]
-      value: What happend to the road??
+      value: ....
       objectReference: {fileID: 0}
     - target: {fileID: 8549184099740910392, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: lines.Array.data[1]
-      value: 'Is that... a maze? '
+      value: What happend to the whole street??
       objectReference: {fileID: 0}
     - target: {fileID: 8549184099740910392, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
@@ -87712,130 +87717,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1001 &6996680259193032485
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3729289774967581817, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -40.71
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.08625245
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.67
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
-      objectReference: {fileID: 0}
-    - target: {fileID: 5938495535189792064, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6043443640875986003, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422720849157771258, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_Name
-      value: Dumpster
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422720849157771258, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 6422720849157771258, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Dumpster
-      objectReference: {fileID: 0}
-    - target: {fileID: 7267693829837292534, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6422720849157771258, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6996680259193032489}
-  m_SourcePrefab: {fileID: 100100000, guid: 46e3b33fdd8dced4ba0c4c03bf04554e, type: 3}
---- !u!1 &6996680259193032486 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6422720849157771258, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
-    type: 3}
-  m_PrefabInstance: {fileID: 6996680259193032485}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &6996680259193032489
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6996680259193032486}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 2.5079231, y: 2.5085063, z: 2.1158428}
-  m_Center: {x: -0.021928787, y: 0.7542536, z: 0.013314247}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -87853,7 +87734,6 @@ SceneRoots:
   - {fileID: 124328925}
   - {fileID: 1298111231}
   - {fileID: 1603440266}
-  - {fileID: 6996680259193032485}
   - {fileID: 249263510}
   - {fileID: 934616321}
   - {fileID: 1635169941}

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Chapter4DialogueManager : MonoBehaviour
+public class Chapter5DialogueManager : MonoBehaviour
 {
     // Player
     [SerializeField] private GameObject player;
@@ -41,6 +41,7 @@ public class Chapter4DialogueManager : MonoBehaviour
     {
         Dialogue2Proc();
         Dialogue3Proc();
+
     }
 
     private void Dialogue1()
@@ -51,22 +52,24 @@ public class Chapter4DialogueManager : MonoBehaviour
 
     void Dialogue2Proc()
     {
+        schoolExitCollider = GameObject.Find("SchoolExit").GetComponent<AreaCollider>();
 
         if (!hasRun2)
         {
-            schoolExitCollider = GameObject.Find("SchoolExit").GetComponent<AreaCollider>();
             if (schoolExitCollider.dialogueStart)
             {
+                audioManager.chaseStop = true;
                 dialogue2.SetActive(true);
                 hasRun2 = true;
             }
         }
     }
 
-
+ 
     void Dialogue3Proc()
     {
 
 
     }
 }
+
