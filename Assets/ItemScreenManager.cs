@@ -45,9 +45,25 @@ public class ItemScreenManager : MonoBehaviour
         else if (gameObject.name == "UmbrellaScreen"){
             inventoryManager.umbrella = true;
         }
+        else if (gameObject.name == "FootScreen")
+        {
+            inventoryManager.foot = true;
+        }
+        else if (gameObject.name == "EyeScreen")
+        {
+            inventoryManager.eye = true;
+        }
         gameObject.SetActive(false);
         grab.SetActive(true);
         
+        Time.timeScale = 1f;
+    }
+
+    public void Leave()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        gameObject.SetActive(false);
         Time.timeScale = 1f;
     }
 }

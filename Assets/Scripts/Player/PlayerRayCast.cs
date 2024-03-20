@@ -12,6 +12,8 @@ public class PlayerRayCast : MonoBehaviour
     [SerializeField] private GameObject indicator;
     [SerializeField] private GameObject umbrellaScreen;
     [SerializeField] private GameObject pelvisScreen;
+    [SerializeField] private GameObject footScreen;
+    [SerializeField] private GameObject eyeScreen;
 
 
     // Other Scripts
@@ -57,6 +59,14 @@ public class PlayerRayCast : MonoBehaviour
                 else if (raycastHit.collider.CompareTag("Pelvis"))
                 {
                     pelvisScreen.SetActive(true);
+                }
+                else if (raycastHit.collider.CompareTag("Foot"))
+                {
+                    footScreen.SetActive(true);
+                }
+                else if (raycastHit.collider.CompareTag("Eye"))
+                {
+                    eyeScreen.SetActive(true);
                 }
                
             }

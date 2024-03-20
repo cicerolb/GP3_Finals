@@ -8,6 +8,8 @@ public class InventoryManager : MonoBehaviour
     public bool flashlight = false;
 
     public bool pelvis = false;
+    public bool foot = false;
+    public bool eye = false;
 
     [Header("Wheels")]
     public bool wheel1 = false;

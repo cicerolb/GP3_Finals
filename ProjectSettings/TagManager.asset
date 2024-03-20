@@ -22,6 +22,7 @@ TagManager:
   - Pelvis
   - Maze Entrance
   - Maze Collider
+  - Foot
   layers:
   - Default
   - TransparentFX

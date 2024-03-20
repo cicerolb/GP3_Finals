@@ -14,7 +14,11 @@ public class ItemManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (inventoryManager.pelvis == true)
+        if (inventoryManager.pelvis == true && gameObject.name == "Pelvis")
+        {
+            gameObject.SetActive(false);
+        }
+        else if (inventoryManager.foot == true && gameObject.name == "Foot")
         {
             gameObject.SetActive(false);
         }

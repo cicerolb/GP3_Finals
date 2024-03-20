@@ -26316,6 +26316,7 @@ MonoBehaviour:
   indicator: {fileID: 233944316}
   umbrellaScreen: {fileID: 0}
   pelvisScreen: {fileID: 1001509948}
+  footScreen: {fileID: 0}
   inventoryManager: {fileID: 0}
   currentDumpster: {fileID: 0}
   currentSewer: {fileID: 0}
@@ -26467,7 +26468,7 @@ PrefabInstance:
     - target: {fileID: 2470340967728933635, guid: b8aa8d33316292441b19bb8989ac33e9,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3102286129428432537, guid: b8aa8d33316292441b19bb8989ac33e9,
         type: 3}
