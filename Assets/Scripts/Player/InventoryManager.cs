@@ -11,6 +11,8 @@ public class InventoryManager : MonoBehaviour
     public bool foot = false;
     public bool eye = false;
 
+    public bool allItems = false;
+
     [Header("Wheels")]
     public bool wheel1 = false;
     public bool wheel2 = false;
@@ -26,6 +28,8 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (pelvis && foot && eye){
+            allItems = true;
+        }
     }
 }
