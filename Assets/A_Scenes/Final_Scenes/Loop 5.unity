@@ -3664,7 +3664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3175769b8d90ddd47ba968b5d448976b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 30b5722bcb88a544db0ddacfeea81775, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3933,12 +3933,17 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 0e516b8f3b1544840a4d5a26feaf7471,
         type: 3}
       propertyPath: m_Name
-      value: Lowpoly
+      value: Eye
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 0e516b8f3b1544840a4d5a26feaf7471,
         type: 3}
       propertyPath: m_Layer
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0e516b8f3b1544840a4d5a26feaf7471,
+        type: 3}
+      propertyPath: m_TagString
+      value: Eye
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3948,6 +3953,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 641444566}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0e516b8f3b1544840a4d5a26feaf7471,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 641444570}
   m_SourcePrefab: {fileID: 100100000, guid: 0e516b8f3b1544840a4d5a26feaf7471, type: 3}
 --- !u!43 &195409076
 Mesh:
@@ -8007,7 +8016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3175769b8d90ddd47ba968b5d448976b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 81dbd43f8bcd026438d80dd7f54ded9e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8412,7 +8421,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Umbrella
+  m_text: Foot
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3e0c5839804eb6b4b854ccea1338e031, type: 2}
   m_sharedMaterial: {fileID: -1812251390192956791, guid: 3e0c5839804eb6b4b854ccea1338e031,
@@ -8447,7 +8456,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -9257,23 +9266,23 @@ MonoBehaviour:
   - {fileID: 290909182}
   - {fileID: 1737927271}
   aiAnim: {fileID: 0}
-  walkSpeed: 8
-  chaseSpeed: 8
+  walkSpeed: 11
+  chaseSpeed: 11
   minIdleTime: 0
   maxIdleTime: 0
   idleTime: 0
-  sightDistance: 10
+  sightDistance: 40
   catchDistance: 1.5
   chaseTime: 0
-  minChaseTime: 10
-  maxChaseTime: 15
+  minChaseTime: 3
+  maxChaseTime: 3
   jumpscareTime: 3
   walking: 0
   chasing: 0
   player: {fileID: 1344706323}
   destinationAmount: 24
   rayCastOffset: {x: 0, y: 0, z: 0}
-  deathScene: Loop 5 Duplicate
+  deathScene: Loop 5
 --- !u!136 &581123792
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -9374,19 +9383,19 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: f540488ffad72a344978899553a20093, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 10
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -9419,7 +9428,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -10090,6 +10099,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.0949631, y: 0.06996164, z: 0.036051724}
   m_Center: {x: -0.005564509, y: 0.0049844817, z: 0.008148558}
+--- !u!114 &641444570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 641444562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 561a31437e6260f48b58d6bf93dcdf9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryManager: {fileID: 0}
 --- !u!43 &641954773
 Mesh:
   m_ObjectHideFlags: 0
@@ -42267,7 +42289,7 @@ MonoBehaviour:
   umbrellaScreen: {fileID: 0}
   pelvisScreen: {fileID: 0}
   footScreen: {fileID: 1871154499}
-  eyeScreen: {fileID: 0}
+  eyeScreen: {fileID: 15329701}
   inventoryManager: {fileID: 0}
   currentDumpster: {fileID: 0}
   currentSewer: {fileID: 0}
@@ -84064,7 +84086,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Umbrella
+  m_text: Eye
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3e0c5839804eb6b4b854ccea1338e031, type: 2}
   m_sharedMaterial: {fileID: -1812251390192956791, guid: 3e0c5839804eb6b4b854ccea1338e031,
@@ -84099,7 +84121,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -90248,9 +90270,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UmbrellaScreenManager, Assembly-CSharp
-        m_MethodName: No
+      - m_Target: {fileID: 15329703}
+        m_TargetAssemblyTypeName: ItemScreenManager, Assembly-CSharp
+        m_MethodName: Leave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -90634,9 +90656,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UmbrellaScreenManager, Assembly-CSharp
-        m_MethodName: No
+      - m_Target: {fileID: 1871154501}
+        m_TargetAssemblyTypeName: ItemScreenManager, Assembly-CSharp
+        m_MethodName: Leave
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
