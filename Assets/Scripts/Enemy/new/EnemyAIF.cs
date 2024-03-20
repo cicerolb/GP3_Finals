@@ -24,6 +24,7 @@ public class EnemyAIF : MonoBehaviour
         walking = true;
         randNum = Random.Range(0, destinations.Count);
         currentDest = destinations[randNum];
+
     }
     void Update()
     {

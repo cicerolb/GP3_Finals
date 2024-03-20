@@ -17,7 +17,7 @@ public class FlashlightIntensity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(1))
         {
             i = (i + 1) % lightPower.Length;
         }

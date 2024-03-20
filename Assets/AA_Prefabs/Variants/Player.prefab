@@ -374,8 +374,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80af86b0c4349f48b925d12fae1d592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStamina: 100
-  maxStamina: 100
+  playerStamina: 75
+  maxStamina: 75
   staminaBar: {fileID: 0}
 --- !u!1 &2958942629734045856
 GameObject:

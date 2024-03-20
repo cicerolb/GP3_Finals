@@ -11,7 +11,8 @@ public class DialPuzzleManager1 : MonoBehaviour
     // Scripts ---
     [SerializeField] LoopManager loopManager;
     [SerializeField] PlayerMovement playerMovement;
-    [SerializeField]HandsAnimation handsAnimation;
+    [SerializeField] HandsAnimation handsAnimation;
+    [SerializeField] EnemyAIF enemyAIF;
 
     // Audio Sources ---
     public AudioSource audioSource;
@@ -57,6 +58,7 @@ public class DialPuzzleManager1 : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         playerCamera = GameObject.FindGameObjectWithTag("Player Camera").GetComponent<CinemachineVirtualCamera>();
         dialPuzzleCamera = GameObject.Find("DialPuzzleCamera").GetComponent<CinemachineVirtualCamera>();
+        enemyAIF = GameObject.Find("Enemy").GetComponent<EnemyAIF>();
 
     }
 
@@ -208,6 +210,7 @@ public class DialPuzzleManager1 : MonoBehaviour
                 puzzleComplete = true;
                 pelvisItem.SetActive(true);
                 dialPuzzleStart = false;
+                enemyAIF.sightDistance = 500;
             }
         }
 

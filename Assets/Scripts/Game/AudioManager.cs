@@ -143,22 +143,30 @@ public class AudioManager : MonoBehaviour
 
     void StoneGateSound()
     {
-        if (stoneGate)
+        if (stoneGate != null)
         {
+            if (stoneGate)
+            {
             stoneGateSound.SetActive(true);
+            }
         }
+        
     }
 
     void SewerSound()
     {
-        if (sewer)
+        if (sewerSound != null)
         {
+            if (sewer)
+            {
             sewerSound.SetActive(true);
-        }
-        else 
-        {
+            }
+            else 
+            {
             sewerSound.SetActive(false);
+            }
         }
+        
     }
 
 }
