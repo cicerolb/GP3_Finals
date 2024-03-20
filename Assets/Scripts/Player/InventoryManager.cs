@@ -7,6 +7,8 @@ public class InventoryManager : MonoBehaviour
     public bool umbrella = false;
     public bool flashlight = false;
 
+    public bool pelvis = false;
+
     [Header("Wheels")]
     public bool wheel1 = false;
     public bool wheel2 = false;

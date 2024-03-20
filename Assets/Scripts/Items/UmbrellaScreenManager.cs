@@ -13,6 +13,7 @@ public class UmbrellaScreenManager : MonoBehaviour
     {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         inventoryManager = GameObject.FindGameObjectWithTag("Player").GetComponentInParent<InventoryManager>();
+        playerMovement.cursorLock = false;
         FreezeEntities();
         Debug.Log("jasdjkoasdasd");
 
