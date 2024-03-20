@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 
 public class BusPuzzleManager : MonoBehaviour
@@ -52,6 +54,7 @@ public class BusPuzzleManager : MonoBehaviour
             interactable.enabled = false;
             HUDPickup.instance.DisableInteractionText(); 
             Debug.Log("Player interaction, Interactable, HUDPickup text, and outline disabled.");
+            StartCoroutine(CutsceneTransition());
         }
     }
 
@@ -93,6 +96,11 @@ public class BusPuzzleManager : MonoBehaviour
         wheel2Renderer.enabled = false;
         wheel3Renderer.enabled = false;
         wheel4Renderer.enabled = false;
+    }
+
+    IEnumerator CutsceneTransition(){
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene("Cutscene");
     }
 
     //private void DisableWheelOutlines()
