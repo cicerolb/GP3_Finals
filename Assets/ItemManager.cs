@@ -22,5 +22,9 @@ public class ItemManager : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+        else if (inventoryManager.eye == true && gameObject.name == "Eye")
+        {
+            gameObject.SetActive(false);
+        }
     }
 }
