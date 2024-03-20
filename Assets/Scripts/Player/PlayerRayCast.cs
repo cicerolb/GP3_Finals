@@ -10,7 +10,9 @@ public class PlayerRayCast : MonoBehaviour
     [SerializeField] private float pickUpDistance;
     private RaycastHit raycastHit;
     [SerializeField] private GameObject indicator;
-    [SerializeField] private GameObject itemScreen;
+    [SerializeField] private GameObject umbrellaScreen;
+    [SerializeField] private GameObject pelvisScreen;
+
 
     // Other Scripts
     [SerializeField] private InventoryManager inventoryManager;
@@ -34,7 +36,7 @@ public class PlayerRayCast : MonoBehaviour
 
                 if (raycastHit.collider.CompareTag("Umbrella"))
                 {
-                    itemScreen.SetActive(true);
+                    umbrellaScreen.SetActive(true);
                 }
                 else if (raycastHit.collider.CompareTag("Dumpster"))
                 {
@@ -51,6 +53,10 @@ public class PlayerRayCast : MonoBehaviour
                     {
                         currentSewer.enterSewerStart = true;
                     }
+                }
+                else if (raycastHit.collider.CompareTag("Pelvis"))
+                {
+                    pelvisScreen.SetActive(true);
                 }
                
             }
