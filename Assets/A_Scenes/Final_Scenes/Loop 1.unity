@@ -2843,8 +2843,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3422ccce44676294d87fb78807ef41eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  animator: {fileID: 1401526873}
+  player: {fileID: 1344706323}
   scene: {fileID: 102900000, guid: 2aabde76b28e4e8489c0b28c21719eaf, type: 3}
 --- !u!65 &272791288
 BoxCollider:
@@ -9934,6 +9934,12 @@ PrefabInstance:
 --- !u!224 &1401526872 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7091932494865388141, guid: 0be26c90af5735f408db3d628d3635fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1401526871}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1401526873 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1301215538082060689, guid: 0be26c90af5735f408db3d628d3635fa,
     type: 3}
   m_PrefabInstance: {fileID: 1401526871}
   m_PrefabAsset: {fileID: 0}

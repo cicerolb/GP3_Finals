@@ -3758,8 +3758,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3422ccce44676294d87fb78807ef41eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animator: {fileID: 0}
-  player: {fileID: 0}
+  animator: {fileID: 1567828586}
+  player: {fileID: 1344706323}
   scene: {fileID: 102900000, guid: a686ca9ef06eed4489cfd9b41c275dda, type: 3}
 --- !u!65 &272791288
 BoxCollider:
@@ -11213,7 +11213,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.13333334
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: cbdf674ecbc79df4ca52628ccb4091f2, type: 2}
   m_BuildHeightMesh: 0
@@ -52956,6 +52956,12 @@ PrefabInstance:
 --- !u!224 &1567828585 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7091932494865388141, guid: 0be26c90af5735f408db3d628d3635fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 1567828584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1567828586 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1301215538082060689, guid: 0be26c90af5735f408db3d628d3635fa,
     type: 3}
   m_PrefabInstance: {fileID: 1567828584}
   m_PrefabAsset: {fileID: 0}
