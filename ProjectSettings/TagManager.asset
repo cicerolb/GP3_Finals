@@ -23,6 +23,7 @@ TagManager:
   - Maze Entrance
   - Maze Collider
   - Foot
+  - Eye
   layers:
   - Default
   - TransparentFX
