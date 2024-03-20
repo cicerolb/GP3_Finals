@@ -1698,7 +1698,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1099726000}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
@@ -5462,7 +5462,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1099726000}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
@@ -8016,7 +8016,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1099726000}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
@@ -11609,7 +11609,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1099726000}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
@@ -58087,7 +58087,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1099726000}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar

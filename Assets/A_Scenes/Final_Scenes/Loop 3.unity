@@ -4679,7 +4679,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1861331321}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
@@ -9080,7 +9080,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1861331321}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
@@ -12736,7 +12736,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1861331321}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
@@ -53499,7 +53499,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1861331321}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
@@ -56548,6 +56548,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71763085471bb6f428c2d065553a0f37, type: 3}
+--- !u!1 &1861331321 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3756498299860861556, guid: 71763085471bb6f428c2d065553a0f37,
+    type: 3}
+  m_PrefabInstance: {fileID: 1861331320}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &1878838687
 Mesh:
   m_ObjectHideFlags: 0
@@ -58216,7 +58222,7 @@ PrefabInstance:
         type: 3}
       propertyPath: hideScreen
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1861331321}
     - target: {fileID: 2777803979854936371, guid: 46e3b33fdd8dced4ba0c4c03bf04554e,
         type: 3}
       propertyPath: cooldownBar
