@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CutsceneScript : MonoBehaviour
 {
     [SerializeField] GameObject trafficSounds;
     [SerializeField] GameObject condoSounds;
+    [SerializeField] GameObject enemy;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +28,7 @@ public class CutsceneScript : MonoBehaviour
         condoSounds.SetActive(true);
         yield return new WaitForSeconds(10.5f);
         condoSounds.SetActive(false);
+        yield return new WaitForSeconds(2f);
+        enemy.SetActive(true);
     }
 }

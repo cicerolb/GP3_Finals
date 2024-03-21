@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07342887, g: 0.069370225, b: 0.067596465, a: 1}
+  m_IndirectSpecularColor: {r: 0.06675672, g: 0.063728325, b: 0.06327918, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -8242,7 +8242,7 @@ PrefabInstance:
     - target: {fileID: 8791892398815413144, guid: 088fe869a68343e43aa4d79d4f7644e7,
         type: 3}
       propertyPath: playerStamina
-      value: 75
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 8818467170406216074, guid: 088fe869a68343e43aa4d79d4f7644e7,
         type: 3}

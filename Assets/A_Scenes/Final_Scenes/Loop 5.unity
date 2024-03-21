@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07342887, g: 0.069370225, b: 0.067596465, a: 1}
+  m_IndirectSpecularColor: {r: 0.06675672, g: 0.063728325, b: 0.06327918, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -9161,8 +9161,8 @@ MonoBehaviour:
   - {fileID: 290909182}
   - {fileID: 1737927271}
   aiAnim: {fileID: 0}
-  walkSpeed: 11
-  chaseSpeed: 11
+  walkSpeed: 9
+  chaseSpeed: 9
   minIdleTime: 0
   maxIdleTime: 0
   idleTime: 0
@@ -42323,7 +42323,7 @@ PrefabInstance:
     - target: {fileID: 8791892398815413144, guid: 088fe869a68343e43aa4d79d4f7644e7,
         type: 3}
       propertyPath: playerStamina
-      value: 75
+      value: 500
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6671524711035859423, guid: 088fe869a68343e43aa4d79d4f7644e7, type: 3}
@@ -92645,6 +92645,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DeathScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 7578635090898161611, guid: 31ec4a7ea78b6604abe692cd524bac11,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
