@@ -82193,6 +82193,12 @@ PrefabInstance:
       objectReference: {fileID: 1344706323}
     - target: {fileID: 6012628844752487659, guid: 1de55b13078befe42a9d0912880fabfa,
         type: 3}
+      propertyPath: deathScreen
+      value: 
+      objectReference: {fileID: 7578635090898161611, guid: 31ec4a7ea78b6604abe692cd524bac11,
+        type: 3}
+    - target: {fileID: 6012628844752487659, guid: 1de55b13078befe42a9d0912880fabfa,
+        type: 3}
       propertyPath: destinationAmount
       value: 15
       objectReference: {fileID: 0}

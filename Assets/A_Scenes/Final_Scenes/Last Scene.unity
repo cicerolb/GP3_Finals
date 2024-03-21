@@ -53712,20 +53712,22 @@ MonoBehaviour:
   - {fileID: 1491133711}
   - {fileID: 1238994486}
   aiAnim: {fileID: 0}
-  walkSpeed: 8
-  chaseSpeed: 8
+  walkSpeed: 11
+  chaseSpeed: 11
   minIdleTime: 0
   maxIdleTime: 0
   idleTime: 0
-  sightDistance: 10
+  sightDistance: 50
   catchDistance: 1.5
   chaseTime: 0
-  minChaseTime: 10
-  maxChaseTime: 15
+  minChaseTime: 3
+  maxChaseTime: 3
   jumpscareTime: 3
   walking: 0
   chasing: 0
   player: {fileID: 1298111227}
+  deathScreen: {fileID: 7578635090898161611, guid: 31ec4a7ea78b6604abe692cd524bac11,
+    type: 3}
   destinationAmount: 18
   rayCastOffset: {x: 0, y: 0, z: 0}
   deathScene: Last Scene

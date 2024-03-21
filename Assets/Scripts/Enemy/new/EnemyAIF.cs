@@ -11,7 +11,7 @@ public class EnemyAIF : MonoBehaviour
     public Animator aiAnim;
     public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime, idleTime, sightDistance, catchDistance, chaseTime, minChaseTime, maxChaseTime, jumpscareTime;
     public bool walking, chasing;
-    public GameObject player;
+    public GameObject player, deathScreen;
     Transform currentDest;
     Vector3 dest;
     int randNum;
@@ -120,6 +120,7 @@ public class EnemyAIF : MonoBehaviour
     }
     IEnumerator deathRoutine()
     {
+        deathScreen.SetActive(true);
         yield return new WaitForSeconds(jumpscareTime);
         SceneManager.LoadScene(deathScene);
     }
