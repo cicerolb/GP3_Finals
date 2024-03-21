@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06675672, g: 0.063728325, b: 0.06327918, a: 1}
+  m_IndirectSpecularColor: {r: 0.07342887, g: 0.069370225, b: 0.067596465, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7504,12 +7504,12 @@ PrefabInstance:
     - target: {fileID: 4246363324736234092, guid: f96fe1e2ed33de7429347007ffe62536,
         type: 3}
       propertyPath: lines.Array.data[1]
-      value: And what are these bowls, are they for sale?
+      value: And what are these bowls for?
       objectReference: {fileID: 0}
     - target: {fileID: 4246363324736234092, guid: f96fe1e2ed33de7429347007ffe62536,
         type: 3}
       propertyPath: lines.Array.data[2]
-      value: Booo they probably went home without me.
+      value: Booo. They probably went home without me.
       objectReference: {fileID: 0}
     - target: {fileID: 4246363324736234092, guid: f96fe1e2ed33de7429347007ffe62536,
         type: 3}
@@ -52818,12 +52818,12 @@ PrefabInstance:
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -182.3352
+      value: -183
       objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -818.6479
+      value: -830
       objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
@@ -52878,12 +52878,12 @@ PrefabInstance:
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -383
+      value: -318.5
       objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 325
+      value: 365
       objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
@@ -52992,12 +52992,12 @@ PrefabInstance:
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -182.3352
+      value: -183
       objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: -818.6479
+      value: -830
       objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
@@ -53052,12 +53052,12 @@ PrefabInstance:
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -383
+      value: -318.5
       objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 325
+      value: 365
       objectReference: {fileID: 0}
     - target: {fileID: 4104670819437220793, guid: ef06a097869fa0a48ad9afb9347d12f6,
         type: 3}
