@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Chapter2Dialogue : MonoBehaviour
 {
     // Player
     [SerializeField] private GameObject player;
+    [SerializeField] GameObject flashlight;
+
+    // Enemy
+    [SerializeField] private GameObject enemy;
 
     // Dialogues
     [SerializeField] private GameObject dialogue1;
@@ -75,7 +80,16 @@ public class Chapter2Dialogue : MonoBehaviour
                 audioManager.jumpScare = true;
                 dialogue3.SetActive(true);
                 hasRun2 = true;
+                StartCoroutine(Jumpscare());
             }
         }
+    }
+
+    IEnumerator Jumpscare(){
+        enemy.SetActive(true);
+        flashlight.SetActive(false);
+        yield return new WaitForSeconds (0.5f);
+        enemy.SetActive(false);
+        flashlight.SetActive(true);
     }
 }
