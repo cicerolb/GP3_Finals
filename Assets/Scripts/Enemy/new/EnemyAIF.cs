@@ -10,8 +10,8 @@ public class EnemyAIF : MonoBehaviour
     public List<Transform> destinations;
     public Animator aiAnim;
     public float walkSpeed, chaseSpeed, minIdleTime, maxIdleTime, idleTime, sightDistance, catchDistance, chaseTime, minChaseTime, maxChaseTime, jumpscareTime;
-    public bool walking, chasing;
-    public GameObject player, deathScreen;
+    public bool walking, chasing, dead;
+    public GameObject player, deathScreen, dialPuzzleCamera;
     Transform currentDest;
     Vector3 dest;
     int randNum;
@@ -35,7 +35,7 @@ public class EnemyAIF : MonoBehaviour
             Debug.DrawRay(transform.position + rayCastOffset, transform.forward * sightDistance, Color.green);
             if (hit.collider.gameObject.tag == "Player")
             {
-                
+
 
                 walking = false;
                 StopCoroutine("stayIdle");
@@ -63,22 +63,26 @@ public class EnemyAIF : MonoBehaviour
                 float distance = Vector3.Distance(player.transform.position, ai.transform.position);
                 if (distance <= catchDistance)
                 {
+                    dead = true;
                     player.gameObject.SetActive(false);
                     //aiAnim.ResetTrigger("walk");
                     //aiAnim.ResetTrigger("idle");
                     //aiAnim.ResetTrigger("sprint");
                     //aiAnim.SetTrigger("jumpscare");
-                    StartCoroutine(deathRoutine());
                     chasing = false;
                 }
             }
-            
+
         }
         if (!player.activeSelf)
         {
             chasing = false;
         }
 
+        if (dead)
+        {
+            StartCoroutine(DeathRoutine());
+        }
 
 
         if (walking == true)
@@ -118,9 +122,14 @@ public class EnemyAIF : MonoBehaviour
         randNum = Random.Range(0, destinations.Count);
         currentDest = destinations[randNum];
     }
-    IEnumerator deathRoutine()
+    IEnumerator DeathRoutine()
     {
         deathScreen.SetActive(true);
+        if (dialPuzzleCamera != null)
+        {
+            dialPuzzleCamera.SetActive(false);
+        }
+
         yield return new WaitForSeconds(jumpscareTime);
         SceneManager.LoadScene(deathScene);
     }
