@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class UmbrellaManager : MonoBehaviour
 {
     InventoryManager inventoryManager;
-    [SerializeField] Object scene;
+    [SerializeField] string scene;
     [SerializeField] MeshRenderer umbrella;
     [SerializeField] public bool changeScene = false;
     // Start is called before the first frame update
@@ -29,6 +29,6 @@ public class UmbrellaManager : MonoBehaviour
     {
         changeScene = true;
         yield return new WaitForSeconds(3);
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene(scene);
     }
 }

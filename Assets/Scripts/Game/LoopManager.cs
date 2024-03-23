@@ -10,7 +10,7 @@ public class LoopManager : MonoBehaviour
     public GameObject player, spawn;
 
     [SerializeField] InventoryManager inventoryManager;
-    [SerializeField] Object scene;
+    [SerializeField] string scene;
 
     void Awake(){
         inventoryManager = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryManager>();
@@ -41,7 +41,7 @@ public class LoopManager : MonoBehaviour
             animator.SetBool("FadeOut", false);
 
             // Start coroutine to load scene after fade animation finishes
-            StartCoroutine(LoadSceneAfterFade(scene.name));
+            StartCoroutine(LoadSceneAfterFade(scene));
             }
         }
         else{
@@ -52,7 +52,7 @@ public class LoopManager : MonoBehaviour
             }
             else if (other.CompareTag("Player") && inventoryManager.allItems){
                 animator.SetBool("FadeOut", false);
-                StartCoroutine(LoadSceneAfterFade(scene.name));
+                StartCoroutine(LoadSceneAfterFade(scene));
             }
             
         }

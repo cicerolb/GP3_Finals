@@ -2059,10 +2059,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press "E" to pickup
+  m_text: Press E
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3e0c5839804eb6b4b854ccea1338e031, type: 2}
+  m_sharedMaterial: {fileID: -1812251390192956791, guid: 3e0c5839804eb6b4b854ccea1338e031,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2262,7 +2263,7 @@ MonoBehaviour:
   player: {fileID: 1344706323}
   spawn: {fileID: 0}
   inventoryManager: {fileID: 0}
-  scene: {fileID: 102900000, guid: 2aabde76b28e4e8489c0b28c21719eaf, type: 3}
+  scene: Loop 2
 --- !u!65 &272791288
 BoxCollider:
   m_ObjectHideFlags: 0

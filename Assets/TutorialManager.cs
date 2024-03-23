@@ -16,7 +16,7 @@ public class TutorialManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "Loop 3")
         {
-
+            
         }
     }
 }

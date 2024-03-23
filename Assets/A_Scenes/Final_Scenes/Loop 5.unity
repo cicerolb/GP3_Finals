@@ -4241,7 +4241,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Press "E" to pickup
+  m_text: Press E
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9881,7 +9881,7 @@ MonoBehaviour:
   player: {fileID: 1344706323}
   spawn: {fileID: 934616320}
   inventoryManager: {fileID: 0}
-  scene: {fileID: 102900000, guid: 6227b50a886130a49a5edbe3de595163, type: 3}
+  scene: Last Scene
 --- !u!65 &626810445
 BoxCollider:
   m_ObjectHideFlags: 0
