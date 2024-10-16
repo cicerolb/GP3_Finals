@@ -61,6 +61,7 @@ public class EnemyAIF : MonoBehaviour
                 //aiAnim.ResetTrigger("idle");
                 //aiAnim.SetTrigger("sprint");
                 float distance = Vector3.Distance(player.transform.position, ai.transform.position);
+                Debug.Log(distance);
                 if (distance <= catchDistance)
                 {
                     dead = true;
@@ -103,6 +104,7 @@ public class EnemyAIF : MonoBehaviour
                 StartCoroutine("stayIdle");
                 walking = false;
             }
+
         }
     }
     IEnumerator stayIdle()
