@@ -279,7 +279,10 @@ MonoBehaviour:
     m_Bits: 0
   pickUpDistance: 2
   indicator: {fileID: 0}
-  itemScreen: {fileID: 0}
+  umbrellaScreen: {fileID: 0}
+  pelvisScreen: {fileID: 0}
+  footScreen: {fileID: 0}
+  eyeScreen: {fileID: 0}
   inventoryManager: {fileID: 0}
   currentDumpster: {fileID: 0}
   currentSewer: {fileID: 0}
@@ -297,6 +300,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   umbrella: 0
   flashlight: 0
+  pelvis: 0
+  foot: 0
+  eye: 0
+  allItems: 0
   wheel1: 0
   wheel2: 0
   wheel3: 0
@@ -1142,8 +1149,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   light: {fileID: 2297726467331523939}
   lightPower:
-  - 15
-  - 50
+  - 100
+  - 300
   - 600
   i: 0
 --- !u!1001 &2859373502554109062
