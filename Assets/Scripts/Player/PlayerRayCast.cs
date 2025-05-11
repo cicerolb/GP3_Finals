@@ -24,56 +24,74 @@ public class PlayerRayCast : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        inventoryManager = GameObject.FindGameObjectWithTag("Player").GetComponent<InventoryManager>();
+        inventoryManager = GetComponent<InventoryManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Physics.Raycast(cameraPosition.position, cameraPosition.forward, out raycastHit, pickUpDistance, pickUpLayerMask))
-        {
-            indicator.SetActive(true);
-            if (Input.GetKeyDown(KeyCode.E))
-            {
+        ItemPickUp();
 
-                if (raycastHit.collider.CompareTag("Umbrella"))
-                {
-                    umbrellaScreen.SetActive(true);
-                }
-                else if (raycastHit.collider.CompareTag("Dumpster"))
-                {
-                    currentDumpster = raycastHit.collider.GetComponent<DumpsterScript>();
-                    if (currentDumpster != null)
-                    {
-                        currentDumpster.enterDumpsterStart = true;
-                    }
-                }
-                else if (raycastHit.collider.CompareTag("Sewer"))
-                {
-                    currentSewer = raycastHit.collider.GetComponent<SewerScript>();
-                    if (currentSewer != null)
-                    {
-                        currentSewer.enterSewerStart = true;
-                    }
-                }
-                else if (raycastHit.collider.CompareTag("Pelvis"))
-                {
-                    pelvisScreen.SetActive(true);
-                }
-                else if (raycastHit.collider.CompareTag("Foot"))
-                {
-                    footScreen.SetActive(true);
-                }
-                else if (raycastHit.collider.CompareTag("Eye"))
-                {
-                    eyeScreen.SetActive(true);
-                }
+
+        // if (Physics.Raycast(cameraPosition.position, cameraPosition.forward, out raycastHit, pickUpDistance, pickUpLayerMask))
+        // {
+        //     indicator.SetActive(true);
+        //     if (Input.GetKeyDown(KeyCode.E))
+        //     {
+
+        //         if (raycastHit.collider.CompareTag("Umbrella"))
+        //         {
+        //             umbrellaScreen.SetActive(true);
+        //         }
+        //         else if (raycastHit.collider.CompareTag("Dumpster"))
+        //         {
+        //             currentDumpster = raycastHit.collider.GetComponent<DumpsterScript>();
+        //             if (currentDumpster != null)
+        //             {
+        //                 currentDumpster.enterDumpsterStart = true;
+        //             }
+        //         }
+        //         else if (raycastHit.collider.CompareTag("Sewer"))
+        //         {
+        //             currentSewer = raycastHit.collider.GetComponent<SewerScript>();
+        //             if (currentSewer != null)
+        //             {
+        //                 currentSewer.enterSewerStart = true;
+        //             }
+        //         }
+        //         else if (raycastHit.collider.CompareTag("Pelvis"))
+        //         {
+        //             pelvisScreen.SetActive(true);
+        //         }
+        //         else if (raycastHit.collider.CompareTag("Foot"))
+        //         {
+        //             footScreen.SetActive(true);
+        //         }
+        //         else if (raycastHit.collider.CompareTag("Eye"))
+        //         {
+        //             eyeScreen.SetActive(true);
+        //         }
                
+        //     }
+        // }
+        // else if (!Physics.Raycast(cameraPosition.position, cameraPosition.forward, out raycastHit, pickUpDistance, pickUpLayerMask))
+
+        // {
+        //     indicator.SetActive(false);
+        // }
+    }
+
+    void ItemPickUp(){
+        if (Physics.Raycast(cameraPosition.position, cameraPosition.forward, out raycastHit, pickUpDistance, pickUpLayerMask)){
+            indicator.SetActive(true);
+            if (Input.GetKeyDown(KeyCode.E)){
+                ItemScript itemScript = raycastHit.collider.GetComponent<ItemScript>();
+                if (itemScript != null){
+                    itemScript.IteminteractedFunction();
+                }
             }
         }
-        else if (!Physics.Raycast(cameraPosition.position, cameraPosition.forward, out raycastHit, pickUpDistance, pickUpLayerMask))
-
-        {
+        else{
             indicator.SetActive(false);
         }
     }

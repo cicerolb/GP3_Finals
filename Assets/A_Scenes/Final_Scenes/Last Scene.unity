@@ -13508,10 +13508,6 @@ PrefabInstance:
       addedObject: {fileID: 1344706327}
     - targetCorrespondingSourceObject: {fileID: 2698102246310055293, guid: 088fe869a68343e43aa4d79d4f7644e7,
         type: 3}
-      insertIndex: 6
-      addedObject: {fileID: 1344706326}
-    - targetCorrespondingSourceObject: {fileID: 2698102246310055293, guid: 088fe869a68343e43aa4d79d4f7644e7,
-        type: 3}
       insertIndex: -1
       addedObject: {fileID: 1344706340}
     - targetCorrespondingSourceObject: {fileID: 2698102246310055293, guid: 088fe869a68343e43aa4d79d4f7644e7,
@@ -13531,28 +13527,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1344706322}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1344706326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1344706323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe49d6918a8ef2441b92fa49bb8621de, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  umbrella: 0
-  flashlight: 0
-  pelvis: 0
-  foot: 0
-  eye: 0
-  allItems: 0
-  wheel1: 0
-  wheel2: 0
-  wheel3: 0
-  wheel4: 0
 --- !u!114 &1344706327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59771,7 +59745,7 @@ GameObject:
   - component: {fileID: 2078089316}
   - component: {fileID: 2078089315}
   m_Layer: 0
-  m_Name: GameManager (1)
+  m_Name: --- GAME MANAGER ---
   m_TagString: Game Manager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60024,16 +59998,20 @@ SceneRoots:
   - {fileID: 1344706322}
   - {fileID: 2078089314}
   - {fileID: 1383057399}
+  - {fileID: 946547083}
   - {fileID: 1345695148}
+<<<<<<< Updated upstream
   - {fileID: 124328925}
   - {fileID: 1298111231}
   - {fileID: 1850469624}
+=======
+  - {fileID: 1603440266}
+>>>>>>> Stashed changes
   - {fileID: 1559003755}
   - {fileID: 819220143}
   - {fileID: 1890969671}
   - {fileID: 1387290212}
   - {fileID: 1433277854}
-  - {fileID: 946547083}
   - {fileID: 1227814342}
   - {fileID: 1551788611}
   - {fileID: 1143595009}
@@ -60052,3 +60030,5 @@ SceneRoots:
   - {fileID: 1963318049}
   - {fileID: 25116593}
   - {fileID: 1683439833}
+  - {fileID: 1298111231}
+  - {fileID: 124328925}

@@ -17,13 +17,9 @@ public class GameManagerTransform : MonoBehaviour
         player = GameObject.Find("Player");
         if (player != null)
         {
-            player = GameObject.Find("Player");
-            if (player != null)
-            {
-                gameObject.transform.position = player.transform.position;
-                gameObject.transform.rotation = player.transform.rotation;
+            gameObject.transform.position = player.transform.position;
+            gameObject.transform.rotation = player.transform.rotation;
 
-            }
         }
     }
 }

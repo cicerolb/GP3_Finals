@@ -123,8 +123,8 @@ GameObject:
   - component: {fileID: 8240626774797099041}
   - component: {fileID: 8690757491612032853}
   - component: {fileID: 7917365288661925919}
-  - component: {fileID: 1558693422294028734}
   - component: {fileID: 8791892398815413144}
+  - component: {fileID: 6724329392048830178}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -298,8 +298,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe49d6918a8ef2441b92fa49bb8621de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  items:
+  - {fileID: 0}
+  - {fileID: 0}
+  itemsStatus: 0000
   umbrella: 0
+<<<<<<< Updated upstream
   flashlight: 0
+=======
+>>>>>>> Stashed changes
   pelvis: 0
   foot: 0
   eye: 0
@@ -361,14 +368,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!81 &1558693422294028734
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2698102246310055293}
-  m_Enabled: 1
 --- !u!114 &8791892398815413144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,9 +380,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b80af86b0c4349f48b925d12fae1d592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerStamina: 75
-  maxStamina: 75
+  playerStamina: 500
+  maxStamina: 200
   staminaBar: {fileID: 0}
+--- !u!114 &6724329392048830178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698102246310055293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89ce401b9f9267e4581f9695ef9c29a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grab: {fileID: 3468016431515839260}
+  flashlight: {fileID: 7367200745657438557}
 --- !u!1 &2958942629734045856
 GameObject:
   m_ObjectHideFlags: 0

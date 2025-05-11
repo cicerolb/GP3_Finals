@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class InventoryManager : MonoBehaviour
 {
+    public GameObject[] items;
+    public bool[] itemsStatus;
     public bool umbrella = false;
-    public bool flashlight = false;
 
     public bool pelvis = false;
     public bool foot = false;
@@ -33,6 +34,26 @@ public class InventoryManager : MonoBehaviour
     {
         if (pelvis && foot && eye){
             allItems = true;
+        }
+
+        ItemCheck();
+    }
+
+    void ItemCheck(){
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items.Length > 0)
+            {
+                if (items != null){
+                ItemScript itemScript = items[i].GetComponent<ItemScript>();
+                if (itemScript.pickedUp)
+                {
+                    itemsStatus[i] = true;
+                }
+                }
+                
+            }
+            
         }
     }
 }

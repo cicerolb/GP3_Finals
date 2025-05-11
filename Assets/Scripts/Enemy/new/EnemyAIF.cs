@@ -35,8 +35,6 @@ public class EnemyAIF : MonoBehaviour
             Debug.DrawRay(transform.position + rayCastOffset, transform.forward * sightDistance, Color.green);
             if (hit.collider.gameObject.tag == "Player")
             {
-
-
                 walking = false;
                 StopCoroutine("stayIdle");
                 StopCoroutine("chaseRoutine");

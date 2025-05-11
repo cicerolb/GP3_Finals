@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         {
             UpdateMouse();
             UpdateMove();
+            cursorLock = true;
         }
 
         if (canMove == false)
